@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".MyFirebaseApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_golden"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_golden_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TOLVAS"
+        tools:targetApi="31">
+        <activity
+            android:name=".ReporteSector8"
+            android:exported="false" />
+        <activity
+            android:name=".PiscinasSector8"
+            android:exported="false" />
+        <activity
+            android:name=".ReporteSector7"
+            android:exported="false" />
+        <activity
+            android:name=".PiscinasSector7"
+            android:exported="false" />
+        <activity
+            android:name=".ReporteSector6"
+            android:exported="false" />
+        <activity
+            android:name=".PiscinasSector6"
+            android:exported="false" />
+        <activity
+            android:name=".ReporteSector5"
+            android:exported="false" />
+        <activity
+            android:name=".ReporteSector4"
+            android:exported="false" />
+        <activity
+            android:name=".PiscinasSector5"
+            android:exported="false" />
+        <activity
+            android:name=".PiscinasSector4"
+            android:exported="false" />
+        <activity
+            android:name=".ReporteSector3"
+            android:exported="false" />
+        <activity
+            android:name=".PiscinasSector3"
+            android:exported="false" />
+        <activity
+            android:name=".PiscinasSector2"
+            android:exported="false" />
+        <activity
+            android:name=".ReporteSector2"
+            android:exported="false" />
+        <activity
+            android:name=".SectorReportes"
+            android:exported="false" />
+
+        <activity
+            android:name=".ReporteSector1"
+            android:exported="false" />
+        <activity
+            android:name=".SectoresIngreso"
+            android:exported="false" />
+        <activity
+            android:name=".INICIO"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PiscinasSector1"
+            android:exported="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_button_default">#ed741a</color> <!-- Color naranja -->
+    <color name="color2">#1b6ca8</color>
+    <color name="textInputLayoutHintColor">#1b6ca8</color> <!-- Color del hint -->
+    <color name="textInputLayoutBoxStrokeColor">#ed741a</color> <!-- Color del borde -->
+    <color name="textInputLayoutErrorColor">#D32F2F</color> <!-- Color del error -->
+    <color name="text_color_light">#000000</color><!-- Color de texto para modo claro -->
+    <color name="text_color_dark">#FFFFFF</color><!-- Color de texto para modo oscuro -->
+    <color name="mtrl_textinput_default_box_stroke_color">#ed741a</color>
+</resources>

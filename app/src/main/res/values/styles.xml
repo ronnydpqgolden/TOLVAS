@@ -1,0 +1,16 @@
+<!-- res/values/styles.xml -->
+<resources>
+    <!-- Estilo base de Material3 -->
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Personaliza tu tema aquí -->
+    </style>
+
+    <!-- Estilo personalizado para TextInputLayout -->
+    <style name="CustomTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">#ed741a</item>
+        <item name="hintTextColor">@color/textInputLayoutHintColor</item>
+        <item name="errorTextColor">@color/textInputLayoutErrorColor</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="options_listZ1">
+        <item>Piscina 1</item>
+        <item>Piscina 2</item>
+        <item>Piscina 3A</item>
+        <item>Piscina 3B</item>
+        <item>Piscina 4</item>
+        <item>Piscina 5A</item>
+        <item>Piscina 5B</item>
+        <item>Piscina 6</item>
+        <item>Piscina 7A</item>
+        <item>Piscina 7B</item>
+        <item>Piscina 8A</item>
+        <item>Piscina 8B</item>
+    </string-array>
+    <string-array name="options_listZ2">
+        <item>Piscina 9</item>
+        <item>Piscina 10A</item>
+        <item>Piscina 10B</item>
+        <item>Piscina 11</item>
+        <item>Piscina 12</item>
+        <item>Piscina 13</item>
+        <item>Piscina 14</item>
+        <item>Piscina 15</item>
+    </string-array>
+    <string-array name="options_listZ3">
+        <item>Piscina 16</item>
+        <item>Piscina 17</item>
+        <item>Piscina 18</item>
+        <item>Piscina 19</item>
+        <item>Piscina 20</item>
+        <item>Piscina 21</item>
+    </string-array>
+    <string-array name="options_listZ4">
+        <item>Piscina 22</item>
+        <item>Piscina 23</item>
+        <item>Piscina 24</item>
+        <item>Piscina 25</item>
+        <item>Piscina 26</item>
+    </string-array>
+    <string-array name="options_listZ5">
+        <item>Piscina 27</item>
+        <item>Piscina 28</item>
+        <item>Piscina 29</item>
+        <item>Piscina 30</item>
+        <item>Piscina 31</item>
+    </string-array>
+    <string-array name="options_listZ6">
+        <item>Piscina 32</item>
+        <item>Piscina 33</item>
+        <item>Piscina 34</item>
+        <item>Piscina 35A</item>
+        <item>Piscina 35B</item>
+        <item>Piscina 36A</item>
+        <item>Piscina 36B</item>
+    </string-array>
+    <string-array name="options_listZ7">
+        <item>Piscina 37</item>
+        <item>Piscina 38A</item>
+        <item>Piscina 38B</item>
+        <item>Piscina 39</item>
+        <item>Piscina 40</item>
+        <item>Piscina 41</item>
+        <item>Piscina 42</item>
+        <item>Piscina 43</item>
+        <item>Piscina 44</item>
+        <item>Piscina 45</item>
+        <item>Piscina 46A</item>
+        <item>Piscina 46B</item>
+    </string-array>
+    <string-array name="options_listZ8">
+        <item>Piscina 47</item>
+        <item>Piscina 48</item>
+        <item>Piscina 49</item>
+        <item>Piscina 50</item>
+        <item>Piscina 51</item>
+        <item>Piscina 52</item>
+        <item>Piscina 53</item>
+        <item>Piscina 54</item>
+        <item>Piscina 55</item>
+        <item>Piscina 56</item>
+    </string-array>
+    <string-array name="balanceado_options">
+        <item>CLASSIC AD 2.0 35%</item>
+        <item>CLASSIC AD 2.0 35%</item>
+        <item>KATAL 0.8 mm 35% Precria</item>
+        <item>KATAL 1.2 mm 35%</item>
+        <item>KATAL 2.0 mm 33%</item>
+        <item>KATAL 2.0 mm 35%</item>
+        <item>FINALIS 2.0 35%</item>
+        <item>TERAP 2.0 35%</item>
+        <item>QUALIS 2.0 35%</item>
+    </string-array>
+
+</resources>

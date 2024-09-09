@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "200534731828",
+    "firebase_url": "https://sobrantestolvas-default-rtdb.firebaseio.com",
+    "project_id": "sobrantestolvas",
+    "storage_bucket": "sobrantestolvas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200534731828:android:cc4dd2529ccf761a4cee61",
+        "android_client_info": {
+          "package_name": "com.example.tolvas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDI78tz1l617eAWnSygTZrD2fcdvMIcSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

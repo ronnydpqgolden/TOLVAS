@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PiscinasSector1">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:id="@+id/tvPiscinas"
+        android:hint="@string/select"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+        app:boxCornerRadiusBottomEnd="5sp"
+        app:boxCornerRadiusBottomStart="5sp"
+        app:boxCornerRadiusTopEnd="5sp"
+        app:boxCornerRadiusTopStart="5sp"
+        app:boxStrokeWidth="0sp"
+        app:boxStrokeWidthFocused="0sp"
+        android:padding="10dp"
+
+    >
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/listaPiscinas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_button_default"
+            android:inputType="none"
+            android:textSize="14sp"
+            app:simpleItemLayout="@array/options_listZ1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="xx/xx/xxxx"
+        android:textSize="24sp" />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/grid1"
+        android:padding="30dp"
+        android:columnCount="2"
+        android:rowCount="4"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvDieta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="DIETA"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_marginEnd="5dp"
+        style="@style/CustomTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="#1b6ca8"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvSobranteTolva"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="SOBRANTE TOLVA"
+        style="@style/CustomTextInputLayout"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_marginStart="5dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvRecarga"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="RECARGA"
+            style="@style/CustomTextInputLayout"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvAlVoleo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="AL VOLEO"
+            style="@style/CustomTextInputLayout"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvSobranteCaseta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="SOBRANTE CASETA"
+            style="@style/CustomTextInputLayout"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvTipoBalanceado"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="5dp"
+            android:hint="@string/select2">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/listaTipoBalanceado"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/color_button_default"
+                android:inputType="none"
+                android:textSize="10sp"
+                app:simpleItemLayout="@array/balanceado_options" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/grid2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:columnCount="2"
+        android:rowCount="6"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:id="@+id/tvzona1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ZONA 1"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/tvzona2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ZONA 2"
+            android:gravity="center"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvT1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="TOLVA 1"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/porcent"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="#1b6ca8"
+                android:id="@+id/etT1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvT6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="TOLVA 6"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/porcent"
+            android:layout_marginStart="5dp"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/etT6"
+                android:textColor="#1b6ca8"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvT2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="TOLVA 2"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/porcent"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/etT2"
+                android:textColor="#1b6ca8"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvT7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="TOLVA 7"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/porcent"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/etT7"
+                android:textColor="#1b6ca8"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvT3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="TOLVA 3"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/porcent"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/etT3"
+                android:textColor="#1b6ca8"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvT8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="TOLVA 8"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/porcent"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/etT8"
+                android:textColor="#1b6ca8"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvT4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="TOLVA 4"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/porcent"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/etT4"
+                android:textColor="#1b6ca8"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvT9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="TOLVA 9"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/porcent"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/etT9"
+                android:textColor="#1b6ca8"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvT5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="TOLVA 5"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/porcent"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/etT5"
+                android:textColor="#1b6ca8"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvT10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="TOLVA 10"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/porcent"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/etT10"
+                android:textColor="#1b6ca8"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/grid4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:columnCount="2"
+        android:rowCount="1"
+        android:orientation="horizontal"
+
+        android:layout_gravity="center_horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:icon="@drawable/save"
+            android:text="Guardar"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="5dp"
+            app:iconGravity="textStart"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:backgroundTint="@color/color_button_default"
+            android:id="@+id/btnGuardar"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:icon="@drawable/update"
+            android:text="Actualizar"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="5dp"
+            app:iconGravity="textStart"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:backgroundTint="#259b93"
+            android:id="@+id/btnActualizar"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/color2"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:iconGravity="textStart"
+            android:text="INICIO"
+            app:icon="@drawable/home" />
+
+    </GridLayout>
+
+
+
+
+
+</LinearLayout>
+</ScrollView>

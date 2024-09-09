@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonz1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        android:text="SECTOR 1 (Piscina 1-8B)"
+        app:icon="@drawable/pool"
+        app:iconSize="30dp"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:backgroundTint="@color/color_button_default"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonz2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        android:text="SECTOR 2 (Piscina 9-15)"
+        app:icon="@drawable/pool"
+        app:iconSize="30dp"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:backgroundTint="@color/color_button_default"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonz3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        android:text="SECTOR 3 (Piscina 16-21)"
+        app:icon="@drawable/pool"
+        app:iconSize="30dp"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:backgroundTint="@color/color_button_default"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonz4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        android:text="SECTOR 4 (Piscina 22-26)"
+        app:icon="@drawable/pool"
+        app:iconSize="30dp"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:backgroundTint="@color/color_button_default"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonz5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        android:text="SECTOR 5 (Piscina 27-31)"
+        app:icon="@drawable/pool"
+        app:iconSize="30dp"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:backgroundTint="@color/color_button_default"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonz6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        android:text="SECTOR 6 (Piscina 32-36b)"
+        app:icon="@drawable/pool"
+        app:iconSize="30dp"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:backgroundTint="@color/color_button_default"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonz7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        android:text="SECTOR 7 (Piscina 37-46b)"
+        app:icon="@drawable/pool"
+        app:iconSize="30dp"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:backgroundTint="@color/color_button_default"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonz8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="SECTOR 8 (Piscina 47-56)"
+        app:icon="@drawable/pool"
+        app:iconSize="30dp"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:backgroundTint="@color/color_button_default"/>
+
+</LinearLayout>
