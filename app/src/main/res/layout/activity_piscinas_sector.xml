@@ -35,7 +35,7 @@
             android:id="@+id/listaPiscinas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/color_button_default"
+            android:backgroundTint="@color/colorsecundario"
             android:inputType="none"
             android:textSize="14sp"
             app:simpleItemLayout="@array/options_listZ1" />
@@ -436,7 +436,7 @@
             android:layout_marginEnd="5dp"
             app:iconGravity="textStart"
             style="@style/Widget.MaterialComponents.Button.Icon"
-            android:backgroundTint="@color/color_button_default"
+            android:backgroundTint="#259b93"
             android:id="@+id/btnGuardar"/>
 
         <com.google.android.material.button.MaterialButton
@@ -451,7 +451,7 @@
             android:layout_marginEnd="5dp"
             app:iconGravity="textStart"
             style="@style/Widget.MaterialComponents.Button.Icon"
-            android:backgroundTint="#259b93"
+            android:backgroundTint="@color/color_button_default"
             android:id="@+id/btnActualizar"/>
 
 

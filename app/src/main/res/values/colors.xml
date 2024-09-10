@@ -9,5 +9,7 @@
     <color name="textInputLayoutErrorColor">#D32F2F</color> <!-- Color del error -->
     <color name="text_color_light">#000000</color><!-- Color de texto para modo claro -->
     <color name="text_color_dark">#FFFFFF</color><!-- Color de texto para modo oscuro -->
-    <color name="mtrl_textinput_default_box_stroke_color">#ed741a</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#259b93</color>
+    <color name="colorsecundario">#259b93</color>
+    color
 </resources>

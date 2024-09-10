@@ -454,10 +454,6 @@ public class ReporteSector8 extends AppCompatActivity {
                                                                                         Integer p55t4 = snapshot.child("t4").getValue(Integer.class);
                                                                                         Integer p55t5 = snapshot.child("t5").getValue(Integer.class);
                                                                                         Integer p55t6 = snapshot.child("t6").getValue(Integer.class);
-                                                                                        Integer p55t7 = snapshot.child("t7").getValue(Integer.class);
-                                                                                        Integer p55t8 = snapshot.child("t8").getValue(Integer.class);
-                                                                                        Integer p55t9 = snapshot.child("t9").getValue(Integer.class);
-                                                                                        Integer p55t10 = snapshot.child("t10").getValue(Integer.class);
 
                                                                                         p55t1 = (p55t1 != null) ? p55t1 : 0;
                                                                                         p55t2 = (p55t2 != null) ? p55t2 : 0;
@@ -465,10 +461,6 @@ public class ReporteSector8 extends AppCompatActivity {
                                                                                         p55t4 = (p55t4 != null) ? p55t4 : 0;
                                                                                         p55t5 = (p55t5 != null) ? p55t5 : 0;
                                                                                         p55t6 = (p55t6 != null) ? p55t6 : 0;
-                                                                                        p55t7 = (p55t7 != null) ? p55t7 : 0;
-                                                                                        p55t8 = (p55t8 != null) ? p55t8 : 0;
-                                                                                        p55t9 = (p55t9 != null) ? p55t9 : 0;
-                                                                                        p55t10 = (p55t10 != null) ? p55t10 : 0;
 
                                                                                         dieta = (dieta != null) ? dieta : 0;
                                                                                         recarga = (recarga != null) ? recarga : 0;
@@ -477,7 +469,7 @@ public class ReporteSector8 extends AppCompatActivity {
                                                                                         alVoleo = (alVoleo != null) ? alVoleo : 0;
                                                                                         tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
-                                                                                        htmlBuilder.append("<tr><td>52</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p55t1).append("</td><td>").append(p55t2).append("</td><td>").append(p55t3).append("</td><td>").append(p55t4).append("</td><td>").append(p55t5).append("</td><td>").append(p55t6).append("</td><td>").append(p55t7).append("</td><td>").append(p55t8).append("</td><td>").append(p55t9).append("</td><td>").append(p55t10).append("</td></tr>");
+                                                                                        htmlBuilder.append("<tr><td>52</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p55t1).append("</td><td>").append(p55t2).append("</td><td>").append(p55t3).append("</td><td>").append(p55t4).append("</td><td>").append(p55t5).append("</td><td>").append(p55t6).append("</td></tr>");
                                                                                     }
                                                                                 }
 

@@ -17,7 +17,7 @@
         app:iconSize="30dp"
         app:iconGravity="textStart"
         style="@style/Widget.MaterialComponents.Button.Icon"
-        android:backgroundTint="@color/color_button_default"/>
+        android:backgroundTint="@color/colorsecundario"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/botonz2"
@@ -30,7 +30,7 @@
         app:iconSize="30dp"
         app:iconGravity="textStart"
         style="@style/Widget.MaterialComponents.Button.Icon"
-        android:backgroundTint="@color/color_button_default"/>
+        android:backgroundTint="@color/colorsecundario"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/botonz3"
@@ -43,7 +43,7 @@
         app:iconSize="30dp"
         app:iconGravity="textStart"
         style="@style/Widget.MaterialComponents.Button.Icon"
-        android:backgroundTint="@color/color_button_default"/>
+        android:backgroundTint="@color/colorsecundario"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/botonz4"
@@ -56,7 +56,7 @@
         app:iconSize="30dp"
         app:iconGravity="textStart"
         style="@style/Widget.MaterialComponents.Button.Icon"
-        android:backgroundTint="@color/color_button_default"/>
+        android:backgroundTint="@color/colorsecundario"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/botonz5"
@@ -69,7 +69,7 @@
         app:iconSize="30dp"
         app:iconGravity="textStart"
         style="@style/Widget.MaterialComponents.Button.Icon"
-        android:backgroundTint="@color/color_button_default"/>
+        android:backgroundTint="@color/colorsecundario"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/botonz6"
@@ -82,7 +82,7 @@
         app:iconSize="30dp"
         app:iconGravity="textStart"
         style="@style/Widget.MaterialComponents.Button.Icon"
-        android:backgroundTint="@color/color_button_default"/>
+        android:backgroundTint="@color/colorsecundario"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/botonz7"
@@ -95,7 +95,7 @@
         app:iconSize="30dp"
         app:iconGravity="textStart"
         style="@style/Widget.MaterialComponents.Button.Icon"
-        android:backgroundTint="@color/color_button_default"/>
+        android:backgroundTint="@color/colorsecundario"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/botonz8"
@@ -107,6 +107,6 @@
         app:iconSize="30dp"
         app:iconGravity="textStart"
         style="@style/Widget.MaterialComponents.Button.Icon"
-        android:backgroundTint="@color/color_button_default"/>
+        android:backgroundTint="@color/colorsecundario"/>
 
 </LinearLayout>

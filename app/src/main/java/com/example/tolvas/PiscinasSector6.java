@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -28,8 +29,11 @@ import com.google.firebase.database.ValueEventListener;
 
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -57,6 +61,7 @@ public class PiscinasSector6 extends AppCompatActivity {
         inicializarFirebase();
         inicializarCamposVariables();
         inicializarListas();
+        actualizarDatosDesdeFirebase();
 
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
@@ -68,6 +73,35 @@ public class PiscinasSector6 extends AppCompatActivity {
         volverInicio();
 
 
+    }
+    private void actualizarDatosDesdeFirebase() {
+        // Lista de referencias a las piscinas
+        List<String> piscinas = Arrays.asList("Piscina 32", "Piscina 33", "Piscina 34", "Piscina 35A", "Piscina 35B", "Piscina 36A", "Piscina 36B");
+
+        for (String piscina : piscinas) {
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference(piscina);
+
+            // Consulta a Firebase
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // Procesa los datos obtenidos
+                    Map<String, Object> datos = (Map<String, Object>) dataSnapshot.getValue();
+                    if (datos != null) {
+                        // Actualiza la interfaz de usuario o maneja los datos
+
+                    } else {
+                        Log.w("FirebaseWarning", "No hay datos disponibles para " + piscina);
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Maneja los errores
+                    Log.e("FirebaseError", "Error al leer los datos de " + piscina, databaseError.toException());
+                }
+            });
+        }
     }
     private void actualizarDatosEnFirebase4T(final String piscinaSeleccionada, final String fechaSeleccionada) {
         botonActualizar.setOnClickListener(new View.OnClickListener() {
