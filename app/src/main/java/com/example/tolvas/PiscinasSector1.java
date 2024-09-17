@@ -458,7 +458,8 @@
                         TVt10.setEnabled(true);
                         TVt10.setHint("TOLVA 10");
                         piscinaTV.setError(null);
-                        botonGuardar.setEnabled(true);
+                        botonGuardar.setEnabled(false);
+                        Toast.makeText(PiscinasSector1.this, "PISCINA PESCADA", Toast.LENGTH_SHORT).show();
                         verificarDatosEnFirebase10T("Piscina 1",fechaSeleccionada);
                     } else if (piscinaSeleccionada.equals("Piscina 2")) {
                         limpiarCamposPiscina1();
@@ -589,8 +590,9 @@
                         TVt9.setEnabled(true);
                         TVt9.setHint("TOLVA 9");
                         TVt10.setVisibility(View.INVISIBLE);
+                        TVt10.setHint("TOLVA 10");
                         TVt10.setEnabled(false);
-                        botonGuardar.setEnabled(true);
+                        botonGuardar.setEnabled(false);
                         verificarDatosEnFirebase9T("Piscina 5A",fechaSeleccionada);
                     } else if (piscinaSeleccionada.equals("Piscina 5B")) {
                         limpiarCamposPiscina1();
@@ -675,7 +677,7 @@
                         TVt10.setEnabled(true);
                         TVt10.setHint("TOLVA 10");
                         piscinaTV.setError(null);
-                        botonGuardar.setEnabled(true);
+                        botonGuardar.setEnabled(false);
                         verificarDatosEnFirebase10T("Piscina 7A",fechaSeleccionada);
                     } else if (piscinaSeleccionada.equals("Piscina 7B")) {
                         limpiarCamposPiscina1();
@@ -720,7 +722,7 @@
                         TVt9.setVisibility(View.VISIBLE);
                         TVt9.setEnabled(true);
                         TVt9.setHint("TOLVA 9");
-                        botonGuardar.setEnabled(true);
+                        botonGuardar.setEnabled(false);
                         verificarDatosEnFirebase9T("Piscina 8A",fechaSeleccionada);
                     }  else if(piscinaSeleccionada.equals("Piscina 8B")){
                         limpiarCamposPiscina1();

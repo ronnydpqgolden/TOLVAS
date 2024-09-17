@@ -93,7 +93,7 @@ public class ReporteSector7 extends AppCompatActivity {
 
         StringBuilder htmlBuilder = new StringBuilder();
         htmlBuilder.append("<html><body>");
-        htmlBuilder.append("<h1>DATOS PISCINAS SECTOR 1</h1>");
+        htmlBuilder.append("<h1>DATOS PISCINAS SECTOR 7</h1>");
         htmlBuilder.append("<table border='1'>");
         htmlBuilder.append("<tr><th>PISCINA</th><th>DIETA</th><th>SOBRANTE TOLVA</th><th>RECARGA</th><th>AL VOLEO</th><th>SOBRANTE CASETA</th><th>TIPO BALANCEADO</th><th>TOLVA 1</th><th>TOLVA 2</th><th>TOLVA 3</th><th>TOLVA 4</th><th>TOLVA 5</th><th>TOLVA 6</th><th>TOLVA 7</th><th>TOLVA 8</th><th>TOLVA 9</th><th>TOLVA 10</th></tr>");
 

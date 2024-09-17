@@ -192,7 +192,7 @@ public class ReporteSector1 extends AppCompatActivity {
 
 
 
-                        // Consultar Piscina 3B
+                        // Consultar Piscina 3A
                         piscina3ARef.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -353,7 +353,7 @@ public class ReporteSector1 extends AppCompatActivity {
                                                                 alVoleo = (alVoleo != null) ? alVoleo : 0;
                                                                 tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
-                                                                htmlBuilder.append("<tr><td>5</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p5At1).append("</td><td>").append(p5At2).append("</td><td>").append(p5At3).append("</td><td>").append(p5At4).append("</td><td>").append(p5At5).append("</td><td>").append(p5At6).append("</td><td>").append(p5At7).append("</td><td>").append(p5At8).append("</td><td>").append(p5At9).append("</td></tr>");
+                                                                htmlBuilder.append("<tr><td>5A</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p5At1).append("</td><td>").append(p5At2).append("</td><td>").append(p5At3).append("</td><td>").append(p5At4).append("</td><td>").append(p5At5).append("</td><td>").append(p5At6).append("</td><td>").append(p5At7).append("</td><td>").append(p5At8).append("</td><td>").append(p5At9).append("</td></tr>");
                                                             }
                                                         }
 

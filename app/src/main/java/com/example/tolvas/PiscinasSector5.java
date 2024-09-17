@@ -435,7 +435,7 @@ public class PiscinasSector5 extends AppCompatActivity {
                         String tipoBalanceadoSeleccionado=autoCompleteTextViewTipos.getText().toString();
                         if (isEditTextEmpty(dietaET)||isEditTextEmpty(sobranteTolvaET)||isEditTextEmpty(alVoleoET)||isEditTextEmpty(sobranteCasetaET)
                                 ||isEditTextEmpty(recargaET)||tipoBalanceadoSeleccionado.equals("")||isEditTextEmpty(ETt1)||isEditTextEmpty(ETt2)||isEditTextEmpty(ETt3)
-                                ||isEditTextEmpty(ETt4)||isEditTextEmpty(ETt6)||isEditTextEmpty(ETt7)||isEditTextEmpty(ETt8)){
+                                ||isEditTextEmpty(ETt4)||isEditTextEmpty(ETt5)||isEditTextEmpty(ETt6)||isEditTextEmpty(ETt7)||isEditTextEmpty(ETt8)||isEditTextEmpty(ETt9)){
                             Toast.makeText(PiscinasSector5.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                             return;
                         }
@@ -452,9 +452,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         p27.setT2(Integer.parseInt(Objects.requireNonNull(ETt2.getText()).toString()));
                         p27.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
                         p27.setT4(Integer.parseInt(Objects.requireNonNull(ETt4.getText()).toString()));
-                        p27.setT5(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
-                        p27.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
-                        p27.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        p27.setT5(Integer.parseInt(Objects.requireNonNull(ETt5.getText()).toString()));
+                        p27.setT6(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
+                        p27.setT7(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
+                        p27.setT8(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        p27.setT9(Integer.parseInt(Objects.requireNonNull(ETt9.getText()).toString()));
                         databaseReference.child("Piscina 27").child(p27.getUid()).setValue(p27);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase7T("Piscina 27",currentDate);
@@ -617,9 +619,8 @@ public class PiscinasSector5 extends AppCompatActivity {
                 // Aquí puedes manejar el texto cambiado
                 if(piscinaSeleccionada.equals("Piscina 27")){
                     limpiarCamposPiscina1();
-                    TVz1.setText("ZONA 2");
-                    TVz2.setText("ZONA 1");
-                    piscinaTV.setError(null);
+                    TVz1.setText("ZONA 1");
+                    TVz2.setText("ZONA 2");
                     TVt1.setVisibility(View.VISIBLE);
                     TVt1.setEnabled(true);
                     TVt2.setVisibility(View.VISIBLE);
@@ -628,23 +629,24 @@ public class PiscinasSector5 extends AppCompatActivity {
                     TVt3.setEnabled(true);
                     TVt4.setVisibility(View.VISIBLE);
                     TVt4.setEnabled(true);
-                    TVt5.setVisibility(View.INVISIBLE);
-                    TVt5.setEnabled(false);
+                    TVt5.setVisibility(View.VISIBLE);
+                    TVt5.setEnabled(true);
                     TVt6.setVisibility(View.VISIBLE);
                     TVt6.setEnabled(true);
-                    TVt6.setHint("TOLVA 5");
+                    TVt6.setHint("TOLVA 6");
                     TVt7.setVisibility(View.VISIBLE);
                     TVt7.setEnabled(true);
-                    TVt7.setHint("TOLVA 6");
+                    TVt7.setHint("TOLVA 7");
                     TVt8.setVisibility(View.VISIBLE);
                     TVt8.setEnabled(true);
-                    TVt8.setHint("TOLVA 7");
-                    TVt9.setVisibility(View.INVISIBLE);
-                    TVt9.setEnabled(false);
+                    TVt8.setHint("TOLVA 8");
+                    TVt9.setVisibility(View.VISIBLE);
+                    TVt9.setEnabled(true);
+                    TVt9.setHint("TOLVA 9");
                     TVt10.setVisibility(View.INVISIBLE);
-                    TVt9.setEnabled(false);
-                    botonGuardar.setEnabled(true);
-                    verificarDatosEnFirebase7T("Piscina 27",fechaSeleccionada);
+                    TVt10.setEnabled(false);
+                    botonGuardar.setEnabled(false);
+                    verificarDatosEnFirebase9T("Piscina 27",fechaSeleccionada);
                 } else if (piscinaSeleccionada.equals("Piscina 28")) {
                     limpiarCamposPiscina1();
                     TVz1.setText("ZONA 2");
@@ -734,8 +736,8 @@ public class PiscinasSector5 extends AppCompatActivity {
                     TVt9.setEnabled(false);
                     TVt10.setVisibility(View.INVISIBLE);
                     TVt9.setEnabled(false);
-                    botonGuardar.setEnabled(true);
-                    verificarDatosEnFirebase7T("Piscina 30",fechaSeleccionada);
+                    botonGuardar.setEnabled(false);
+                    //verificarDatosEnFirebase7T("Piscina 30",fechaSeleccionada);
                 } else if (piscinaSeleccionada.equals("Piscina 31")) {
                     limpiarCamposPiscina1();
                     TVz1.setText("ZONA 1");
@@ -764,8 +766,8 @@ public class PiscinasSector5 extends AppCompatActivity {
                     TVt9.setEnabled(false);
                     TVt10.setVisibility(View.INVISIBLE);
                     TVt9.setEnabled(false);
-                    botonGuardar.setEnabled(true);
-                    verificarDatosEnFirebase7T("Piscina 31",fechaSeleccionada);
+                    botonGuardar.setEnabled(false);
+                    //verificarDatosEnFirebase7T("Piscina 31",fechaSeleccionada);
                 }
             }
 
@@ -835,7 +837,6 @@ public class PiscinasSector5 extends AppCompatActivity {
                     }
                 } else {
                     // No se encontraron datos para la fecha seleccionada
-                    //Toast.makeText(PiscinasSector1.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
 
                     // Habilitar el botón de guardar
                     botonGuardar.setEnabled(true);
@@ -923,7 +924,6 @@ public class PiscinasSector5 extends AppCompatActivity {
                     }
                 } else {
                     // No se encontraron datos para la fecha seleccionada
-                    //Toast.makeText(PiscinasSector1.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
 
                     // Habilitar el botón de guardar
                     botonGuardar.setEnabled(true);
@@ -1017,7 +1017,6 @@ public class PiscinasSector5 extends AppCompatActivity {
                     }
                 } else {
                     // No se encontraron datos para la fecha seleccionada
-                    //Toast.makeText(PiscinasSector1.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
 
                     // Habilitar el botón de guardar
                     botonGuardar.setEnabled(true);
@@ -1102,7 +1101,6 @@ public class PiscinasSector5 extends AppCompatActivity {
                     }
                 } else {
                     // No se encontraron datos para la fecha seleccionada
-                    Toast.makeText(PiscinasSector5.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
 
                     // Habilitar el botón de guardar
                     botonGuardar.setEnabled(true);
@@ -1278,7 +1276,6 @@ public class PiscinasSector5 extends AppCompatActivity {
                     }
                 } else {
                     // No se encontraron datos para la fecha seleccionada
-                    Toast.makeText(PiscinasSector5.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
 
                     // Habilitar el botón de guardar
                     botonGuardar.setEnabled(true);
@@ -1354,7 +1351,7 @@ public class PiscinasSector5 extends AppCompatActivity {
                     }
                 } else {
                     // No se encontraron datos para la fecha seleccionada
-                    Toast.makeText(PiscinasSector5.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(PiscinasSector5.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
 
                     // Habilitar el botón de guardar
                     botonGuardar.setEnabled(true);

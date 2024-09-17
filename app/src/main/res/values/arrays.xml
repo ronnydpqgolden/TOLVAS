@@ -82,8 +82,6 @@
         <item>Piscina 56</item>
     </string-array>
     <string-array name="balanceado_options">
-        <item>CLASSIC AD 2.0 35%</item>
-        <item>CLASSIC AD 2.0 35%</item>
         <item>KATAL 0.8 mm 35% Precria</item>
         <item>KATAL 1.2 mm 35%</item>
         <item>KATAL 2.0 mm 33%</item>
@@ -91,6 +89,7 @@
         <item>FINALIS 2.0 35%</item>
         <item>TERAP 2.0 35%</item>
         <item>QUALIS 2.0 35%</item>
+        <item>CLASSIC AD 2.0 35%</item>
     </string-array>
 
 </resources>

@@ -605,8 +605,8 @@ public class PiscinasSector3 extends AppCompatActivity {
                 // Aquí puedes manejar el texto cambiado
                 if(piscinaSeleccionada.equals("Piscina 16")){
                     limpiarCamposPiscina1();
-                    TVz1.setText("ZONA 1");
-                    TVz2.setText("ZONA 2");
+                    TVz1.setText("ZONA 2");
+                    TVz2.setText("ZONA 1");
                     piscinaTV.setError(null);
                     TVt1.setVisibility(View.VISIBLE);
                     TVt1.setEnabled(true);
@@ -691,8 +691,9 @@ public class PiscinasSector3 extends AppCompatActivity {
                     TVt10.setEnabled(true);
                     TVt10.setHint("TOLVA 10");
                     piscinaTV.setError(null);
-                    botonGuardar.setEnabled(true);
-                    verificarDatosEnFirebase10T("Piscina 18",fechaSeleccionada);
+                    botonGuardar.setEnabled(false);
+                    Toast.makeText(PiscinasSector3.this, "PISCINA PESCADA", Toast.LENGTH_SHORT).show();
+                    //verificarDatosEnFirebase10T("Piscina 18",fechaSeleccionada);
                 } else if (piscinaSeleccionada.equals("Piscina 19")) {
                     limpiarCamposPiscina1();
                     TVz1.setText("ZONA 2");
@@ -753,8 +754,8 @@ public class PiscinasSector3 extends AppCompatActivity {
                     TVt9.setHint("TOLVA 8");
                     TVt10.setVisibility(View.INVISIBLE);
                     TVt10.setEnabled(false);
-                    botonGuardar.setEnabled(true);
-                    verificarDatosEnFirebase8T("Piscina 20",fechaSeleccionada);
+                    botonGuardar.setEnabled(false);
+                    //verificarDatosEnFirebase8T("Piscina 20",fechaSeleccionada);
                 } else if (piscinaSeleccionada.equals("Piscina 21")) {
                     limpiarCamposPiscina1();
                     TVz1.setText("ZONA 2");
@@ -784,8 +785,9 @@ public class PiscinasSector3 extends AppCompatActivity {
                     TVt9.setHint("TOLVA 8");
                     TVt10.setVisibility(View.INVISIBLE);
                     TVt10.setEnabled(false);
-                    botonGuardar.setEnabled(true);
-                    verificarDatosEnFirebase8T("Piscina 21",fechaSeleccionada);
+                    botonGuardar.setEnabled(false);
+                    Toast.makeText(PiscinasSector3.this, "PISCINA PESCADA", Toast.LENGTH_SHORT).show();
+                    //verificarDatosEnFirebase8T("Piscina 21",fechaSeleccionada);
                 }
             }
 
@@ -1046,7 +1048,7 @@ public class PiscinasSector3 extends AppCompatActivity {
                     }
                 } else {
                     // No se encontraron datos para la fecha seleccionada
-                    Toast.makeText(PiscinasSector3.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(PiscinasSector3.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
 
                     // Habilitar el botón de guardar
                     botonGuardar.setEnabled(true);
@@ -1221,7 +1223,7 @@ public class PiscinasSector3 extends AppCompatActivity {
                     }
                 } else {
                     // No se encontraron datos para la fecha seleccionada
-                    Toast.makeText(PiscinasSector3.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(PiscinasSector3.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
 
                     // Habilitar el botón de guardar
                     botonGuardar.setEnabled(true);
@@ -1297,7 +1299,7 @@ public class PiscinasSector3 extends AppCompatActivity {
                     }
                 } else {
                     // No se encontraron datos para la fecha seleccionada
-                    Toast.makeText(PiscinasSector3.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(PiscinasSector3.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
 
                     // Habilitar el botón de guardar
                     botonGuardar.setEnabled(true);

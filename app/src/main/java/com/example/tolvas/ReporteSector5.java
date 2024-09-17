@@ -109,6 +109,8 @@ public class ReporteSector5 extends AppCompatActivity {
                         Integer p27t5 = snapshot.child("t5").getValue(Integer.class);
                         Integer p27t6 = snapshot.child("t6").getValue(Integer.class);
                         Integer p27t7 = snapshot.child("t7").getValue(Integer.class);
+                        Integer p27t8 = snapshot.child("t8").getValue(Integer.class);
+                        Integer p27t9 = snapshot.child("t9").getValue(Integer.class);
 
                         p27t1 = (p27t1 != null) ? p27t1 : 0;
                         p27t2 = (p27t2 != null) ? p27t2 : 0;
@@ -117,6 +119,8 @@ public class ReporteSector5 extends AppCompatActivity {
                         p27t5 = (p27t5 != null) ? p27t5 : 0;
                         p27t6 = (p27t6 != null) ? p27t6 : 0;
                         p27t7 = (p27t7 != null) ? p27t7 : 0;
+                        p27t8 = (p27t8 != null) ? p27t8 : 0;
+                        p27t9 = (p27t9 != null) ? p27t9 : 0;
 
                         dieta = (dieta != null) ? dieta : 0;
                         recarga = (recarga != null) ? recarga : 0;
@@ -124,7 +128,7 @@ public class ReporteSector5 extends AppCompatActivity {
                         sobranteTolva = (sobranteTolva != null) ? sobranteTolva : 0;
                         alVoleo = (alVoleo != null) ? alVoleo : 0;
                         tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
-                        htmlBuilder.append("<tr><td>27</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p27t1).append("</td><td>").append(p27t2).append("</td><td>").append(p27t3).append("</td><td>").append(p27t4).append("</td><td>").append(p27t5).append("</td><td>").append(p27t6).append("</td><td>").append(p27t7).append("</td></tr>");
+                        htmlBuilder.append("<tr><td>27</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p27t1).append("</td><td>").append(p27t2).append("</td><td>").append(p27t3).append("</td><td>").append(p27t4).append("</td><td>").append(p27t5).append("</td><td>").append(p27t6).append("</td><td>").append(p27t7).append("</td><td>").append(p27t8).append("</td><td>").append(p27t9).append("</td></tr>");
                     }
                 }
 
