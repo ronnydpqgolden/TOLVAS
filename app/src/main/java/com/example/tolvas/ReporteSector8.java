@@ -90,9 +90,9 @@ public class ReporteSector8 extends AppCompatActivity {
 
         StringBuilder htmlBuilder = new StringBuilder();
         htmlBuilder.append("<html><body>");
-        htmlBuilder.append("<h1>DATOS PISCINAS SECTOR 1</h1>");
+        htmlBuilder.append("<h1>DATOS PISCINAS SECTOR 8</h1>");
         htmlBuilder.append("<table border='1'>");
-        htmlBuilder.append("<tr><th>PISCINA</th><th>DIETA</th><th>SOBRANTE TOLVA</th><th>RECARGA</th><th>AL VOLEO</th><th>SOBRANTE CASETA</th><th>TIPO BALANCEADO</th><th>TOLVA 1</th><th>TOLVA 2</th><th>TOLVA 3</th><th>TOLVA 4</th><th>TOLVA 5</th><th>TOLVA 6</th><th>TOLVA 7</th><th>TOLVA 8</th><th>TOLVA 9</th><th>TOLVA 10</th></tr>");
+        htmlBuilder.append("<tr><th>PISCINA</th><th>DIETA (KG)</th><th>SOBRANTE TOLVA (KG)</th><th>RECARGA (KG)</th><th>AL VOLEO (KG)</th><th>SOBRANTE CASETA (KG)</th><th>TIPO BALANCEADO</th><th>TOLVA 1</th><th>TOLVA 2</th><th>TOLVA 3</th><th>TOLVA 4</th><th>TOLVA 5</th><th>TOLVA 6</th><th>TOLVA 7</th><th>TOLVA 8</th><th>TOLVA 9</th><th>TOLVA 10</th></tr>");
 
         // Consultar Piscina 47
         piscina47Ref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -127,14 +127,14 @@ public class ReporteSector8 extends AppCompatActivity {
                         p47t7 = (p47t7 != null) ? p47t7 : 0;
                         p47t8 = (p47t8 != null) ? p47t8 : 0;
 
-                        dieta = (dieta != null) ? dieta : 0;
-                        recarga = (recarga != null) ? recarga : 0;
-                        sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta : 0;
-                        sobranteTolva = (sobranteTolva != null) ? sobranteTolva : 0;
-                        alVoleo = (alVoleo != null) ? alVoleo : 0;
+                        dieta = (dieta != null) ? dieta * 25 : 0;
+                        recarga = (recarga != null) ? recarga * 25 : 0;
+                        sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta * 25 : 0;
+                        sobranteTolva = (sobranteTolva != null) ? sobranteTolva * 25 : 0;
+                        alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                         tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
-                        htmlBuilder.append("<tr><td>37</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p47t1).append("</td><td>").append(p47t2).append("</td><td>").append(p47t3).append("</td><td>").append(p47t4).append("</td><td>").append(p47t5).append("</td><td>").append(p47t6).append("</td><td>").append(p47t7).append("</td><td>").append(p47t8).append("</td></tr>");
+                        htmlBuilder.append("<tr><td>47</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p47t1).append("</td><td>").append(p47t2).append("</td><td>").append(p47t3).append("</td><td>").append(p47t4).append("</td><td>").append(p47t5).append("</td><td>").append(p47t6).append("</td><td>").append(p47t7).append("</td><td>").append(p47t8).append("</td></tr>");
                     }
                 }
 
@@ -167,11 +167,11 @@ public class ReporteSector8 extends AppCompatActivity {
                                 p48t5 = (p48t5 != null) ? p48t5 : 0;
                                 p48t6 = (p48t6 != null) ? p48t6 : 0;
 
-                                dieta = (dieta != null) ? dieta : 0;
-                                recarga = (recarga != null) ? recarga : 0;
-                                sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta : 0;
-                                sobranteTolva = (sobranteTolva != null) ? sobranteTolva : 0;
-                                alVoleo = (alVoleo != null) ? alVoleo : 0;
+                                dieta = (dieta != null) ? dieta * 25 : 0;
+                                recarga = (recarga != null) ? recarga * 25 : 0;
+                                sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta * 25 : 0;
+                                sobranteTolva = (sobranteTolva != null) ? sobranteTolva * 25 : 0;
+                                alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                 tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
                                 htmlBuilder.append("<tr><td>48</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p48t1).append("</td><td>").append(p48t2).append("</td><td>").append(p48t3).append("</td><td>").append(p48t4).append("</td><td>").append(p48t5).append("</td><td>").append(p48t6).append("</td></tr>");
@@ -207,11 +207,11 @@ public class ReporteSector8 extends AppCompatActivity {
                                         p49t5 = (p49t5 != null) ? p49t5 : 0;
                                         p49t6 = (p49t6 != null) ? p49t6 : 0;
 
-                                        dieta = (dieta != null) ? dieta : 0;
-                                        recarga = (recarga != null) ? recarga : 0;
-                                        sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta : 0;
-                                        sobranteTolva = (sobranteTolva != null) ? sobranteTolva : 0;
-                                        alVoleo = (alVoleo != null) ? alVoleo : 0;
+                                        dieta = (dieta != null) ? dieta * 25 : 0;
+                                        recarga = (recarga != null) ? recarga * 25 : 0;
+                                        sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta * 25 : 0;
+                                        sobranteTolva = (sobranteTolva != null) ? sobranteTolva * 25 : 0;
+                                        alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                         tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
                                         htmlBuilder.append("<tr><td>49</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p49t1).append("</td><td>").append(p49t2).append("</td><td>").append(p49t3).append("</td><td>").append(p49t4).append("</td><td>").append(p49t5).append("</td><td>").append(p49t6).append("</td></tr>");
@@ -253,11 +253,11 @@ public class ReporteSector8 extends AppCompatActivity {
                                                 p50t7 = (p50t7 != null) ? p50t7 : 0;
                                                 p50t8 = (p50t8 != null) ? p50t8 : 0;
 
-                                                dieta = (dieta != null) ? dieta : 0;
-                                                recarga = (recarga != null) ? recarga : 0;
-                                                sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta : 0;
-                                                sobranteTolva = (sobranteTolva != null) ? sobranteTolva : 0;
-                                                alVoleo = (alVoleo != null) ? alVoleo : 0;
+                                                dieta = (dieta != null) ? dieta * 25 : 0;
+                                                recarga = (recarga != null) ? recarga * 25 : 0;
+                                                sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta * 25 : 0;
+                                                sobranteTolva = (sobranteTolva != null) ? sobranteTolva * 25 : 0;
+                                                alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                                 tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
                                                 htmlBuilder.append("<tr><td>50</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p50t1).append("</td><td>").append(p50t2).append("</td><td>").append(p50t3).append("</td><td>").append(p50t4).append("</td><td>").append(p50t5).append("</td><td>").append(p50t6).append("</td><td>").append(p50t7).append("</td><td>").append(p50t8).append("</td></tr>");
@@ -296,11 +296,11 @@ public class ReporteSector8 extends AppCompatActivity {
                                                         p51t7 = (p51t7 != null) ? p51t7 : 0;
                                                         p51t8 = (p51t8 != null) ? p51t8 : 0;
 
-                                                        dieta = (dieta != null) ? dieta : 0;
-                                                        recarga = (recarga != null) ? recarga : 0;
-                                                        sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta : 0;
-                                                        sobranteTolva = (sobranteTolva != null) ? sobranteTolva : 0;
-                                                        alVoleo = (alVoleo != null) ? alVoleo : 0;
+                                                        dieta = (dieta != null) ? dieta * 25 : 0;
+                                                        recarga = (recarga != null) ? recarga * 25 : 0;
+                                                        sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta * 25 : 0;
+                                                        sobranteTolva = (sobranteTolva != null) ? sobranteTolva * 25 : 0;
+                                                        alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                                         tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
                                                         htmlBuilder.append("<tr><td>51</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p51t1).append("</td><td>").append(p51t2).append("</td><td>").append(p51t3).append("</td><td>").append(p51t4).append("</td><td>").append(p51t5).append("</td><td>").append(p51t6).append("</td><td>").append(p51t7).append("</td><td>").append(p51t8).append("</td></tr>");
@@ -343,11 +343,11 @@ public class ReporteSector8 extends AppCompatActivity {
                                                                 p52t9 = (p52t9 != null) ? p52t9 : 0;
                                                                 p52t10 = (p52t10 != null) ? p52t10 : 0;
 
-                                                                dieta = (dieta != null) ? dieta : 0;
-                                                                recarga = (recarga != null) ? recarga : 0;
-                                                                sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta : 0;
-                                                                sobranteTolva = (sobranteTolva != null) ? sobranteTolva : 0;
-                                                                alVoleo = (alVoleo != null) ? alVoleo : 0;
+                                                                dieta = (dieta != null) ? dieta * 25 : 0;
+                                                                recarga = (recarga != null) ? recarga * 25 : 0;
+                                                                sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta * 25 : 0;
+                                                                sobranteTolva = (sobranteTolva != null) ? sobranteTolva * 25 : 0;
+                                                                alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                                                 tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
                                                                 htmlBuilder.append("<tr><td>52</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p52t1).append("</td><td>").append(p52t2).append("</td><td>").append(p52t3).append("</td><td>").append(p52t4).append("</td><td>").append(p52t5).append("</td><td>").append(p52t6).append("</td><td>").append(p52t7).append("</td><td>").append(p52t8).append("</td><td>").append(p52t9).append("</td><td>").append(p52t10).append("</td></tr>");
@@ -382,11 +382,11 @@ public class ReporteSector8 extends AppCompatActivity {
                                                                         p53t5 = (p53t5 != null) ? p53t5 : 0;
                                                                         p53t6 = (p53t6 != null) ? p53t6 : 0;
 
-                                                                        dieta = (dieta != null) ? dieta : 0;
-                                                                        recarga = (recarga != null) ? recarga : 0;
-                                                                        sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta : 0;
-                                                                        sobranteTolva = (sobranteTolva != null) ? sobranteTolva : 0;
-                                                                        alVoleo = (alVoleo != null) ? alVoleo : 0;
+                                                                        dieta = (dieta != null) ? dieta * 25 : 0;
+                                                                        recarga = (recarga != null) ? recarga * 25 : 0;
+                                                                        sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta * 25 : 0;
+                                                                        sobranteTolva = (sobranteTolva != null) ? sobranteTolva * 25 : 0;
+                                                                        alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                                                         tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
                                                                         htmlBuilder.append("<tr><td>53</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p53t1).append("</td><td>").append(p53t2).append("</td><td>").append(p53t3).append("</td><td>").append(p53t4).append("</td><td>").append(p53t5).append("</td><td>").append(p53t6).append("</td></tr>");
@@ -422,11 +422,11 @@ public class ReporteSector8 extends AppCompatActivity {
                                                                                 p54t5 = (p54t5 != null) ? p54t5 : 0;
                                                                                 p54t6 = (p54t6 != null) ? p54t6 : 0;
 
-                                                                                dieta = (dieta != null) ? dieta : 0;
-                                                                                recarga = (recarga != null) ? recarga : 0;
-                                                                                sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta : 0;
-                                                                                sobranteTolva = (sobranteTolva != null) ? sobranteTolva : 0;
-                                                                                alVoleo = (alVoleo != null) ? alVoleo : 0;
+                                                                                dieta = (dieta != null) ? dieta * 25 : 0;
+                                                                                recarga = (recarga != null) ? recarga * 25 : 0;
+                                                                                sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta * 25 : 0;
+                                                                                sobranteTolva = (sobranteTolva != null) ? sobranteTolva * 25 : 0;
+                                                                                alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                                                                 tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
                                                                                 htmlBuilder.append("<tr><td>54</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p54t1).append("</td><td>").append(p54t2).append("</td><td>").append(p54t3).append("</td><td>").append(p54t4).append("</td><td>").append(p54t5).append("</td><td>").append(p54t6).append("</td></tr>");
@@ -462,11 +462,11 @@ public class ReporteSector8 extends AppCompatActivity {
                                                                                         p55t5 = (p55t5 != null) ? p55t5 : 0;
                                                                                         p55t6 = (p55t6 != null) ? p55t6 : 0;
 
-                                                                                        dieta = (dieta != null) ? dieta : 0;
-                                                                                        recarga = (recarga != null) ? recarga : 0;
-                                                                                        sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta : 0;
-                                                                                        sobranteTolva = (sobranteTolva != null) ? sobranteTolva : 0;
-                                                                                        alVoleo = (alVoleo != null) ? alVoleo : 0;
+                                                                                        dieta = (dieta != null) ? dieta * 25 : 0;
+                                                                                        recarga = (recarga != null) ? recarga * 25 : 0;
+                                                                                        sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta * 25 : 0;
+                                                                                        sobranteTolva = (sobranteTolva != null) ? sobranteTolva * 25 : 0;
+                                                                                        alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                                                                         tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
                                                                                         htmlBuilder.append("<tr><td>52</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p55t1).append("</td><td>").append(p55t2).append("</td><td>").append(p55t3).append("</td><td>").append(p55t4).append("</td><td>").append(p55t5).append("</td><td>").append(p55t6).append("</td></tr>");
@@ -501,11 +501,11 @@ public class ReporteSector8 extends AppCompatActivity {
                                                                                                 p45t5 = (p45t5 != null) ? p45t5 : 0;
                                                                                                 p45t6 = (p45t6 != null) ? p45t6 : 0;
 
-                                                                                                dieta = (dieta != null) ? dieta : 0;
-                                                                                                recarga = (recarga != null) ? recarga : 0;
-                                                                                                sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta : 0;
-                                                                                                sobranteTolva = (sobranteTolva != null) ? sobranteTolva : 0;
-                                                                                                alVoleo = (alVoleo != null) ? alVoleo : 0;
+                                                                                                dieta = (dieta != null) ? dieta * 25 : 0;
+                                                                                                recarga = (recarga != null) ? recarga * 25 : 0;
+                                                                                                sobranteCaseta = (sobranteCaseta != null) ? sobranteCaseta * 25 : 0;
+                                                                                                sobranteTolva = (sobranteTolva != null) ? sobranteTolva * 25 : 0;
+                                                                                                alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                                                                                 tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
                                                                                                 htmlBuilder.append("<tr><td>56</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p45t1).append("</td><td>").append(p45t2).append("</td><td>").append(p45t3).append("</td><td>").append(p45t4).append("</td><td>").append(p45t5).append("</td><td>").append(p45t6).append("</td></tr>");

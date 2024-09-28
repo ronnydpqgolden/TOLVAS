@@ -19,6 +19,25 @@ public class Piscinas {
     public int t8;
     public int t9;
     public int t10;
+    public int gramosTotalP;
+
+    public int getPorcentajeSobranteP() {
+        return porcentajeSobranteP;
+    }
+
+    public void setPorcentajeSobranteP(int porcentajeSobranteP) {
+        this.porcentajeSobranteP = porcentajeSobranteP;
+    }
+
+    public int getGramosTotalP() {
+        return gramosTotalP;
+    }
+
+    public void setGramosTotalP(int gramosTotalP) {
+        this.gramosTotalP = gramosTotalP;
+    }
+
+    public int porcentajeSobranteP;
 
     public String getUid() {
         return uid;

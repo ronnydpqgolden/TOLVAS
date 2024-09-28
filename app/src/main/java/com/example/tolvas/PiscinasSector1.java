@@ -43,7 +43,7 @@
         private TextInputLayout dietaTV,sobranteTolvaTV,recargaTV,alVoleoTV,sobranteCasetaTV,piscinaTV,tiposBalanceadoTV;
         private TextInputEditText dietaET,sobranteTolvaET,sobranteCasetaET,recargaET,alVoleoET;
         private TextInputLayout TVt1,TVt2,TVt3,TVt4,TVt5,TVt6,TVt7,TVt8,TVt9,TVt10;
-        private TextInputEditText ETt1,ETt2,ETt3,ETt4,ETt5,ETt6,ETt7,ETt8,ETt9,ETt10;
+        private TextInputEditText ETt1,ETt2,ETt3,ETt4,ETt5,ETt6,ETt7,ETt8,ETt9,ETt10,ETGramos, ETPorcentaje;
         private String piscinaSeleccionada;
         private TextView dateTextView,TVz1,TVz2;
         MaterialButton botonGuardar,botonInicio,botonActualizar;
@@ -162,7 +162,12 @@
                             p1.setT8(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
                             p1.setT9(Integer.parseInt(Objects.requireNonNull(ETt9.getText()).toString()));
                             p1.setT10(Integer.parseInt(Objects.requireNonNull(ETt10.getText()).toString()));
+                            //p1.setGramosTotalP(Integer.parseInt(Objects.requireNonNull(ETGramos.getText()).toString()));
+                            //p1.setPorcentajeSobranteP(Integer.parseInt(Objects.requireNonNull(ETPorcentaje.getText()).toString()));
+                            //p1.setGramosTotalP(Integer.parseInt(Objects.requireNonNull(ETGramos.getText()).toString()));
+                            //p1.setPorcentajeSobranteP(Integer.parseInt(Objects.requireNonNull(ETPorcentaje.getText()).toString()));
                             databaseReference.child("Piscina 1").child(p1.getUid()).setValue(p1);
+
                             //limparcampospiscina1();
                             verificarDatosEnFirebase10T("Piscina 1",currentDate);
                             Toast.makeText(PiscinasSector1.this, "DATOS INGRESADOS", Toast.LENGTH_SHORT).show();
@@ -197,7 +202,32 @@
                             Toast.makeText(PiscinasSector1.this, "DATOS INGRESADOS", Toast.LENGTH_SHORT).show();
                             
                         }else if (piscinaSeleccionada.equals("Piscina 3A")) {
-                            Toast.makeText(PiscinasSector1.this, "PISCINA NO HABILITADA", Toast.LENGTH_SHORT).show();
+                            String tipoBalanceadoSeleccionado=autoCompleteTextViewTipos.getText().toString();
+                            if (isEditTextEmpty(dietaET)||isEditTextEmpty(sobranteTolvaET)||isEditTextEmpty(alVoleoET)||isEditTextEmpty(sobranteCasetaET)
+                                    ||isEditTextEmpty(recargaET)||tipoBalanceadoSeleccionado.equals("")||isEditTextEmpty(ETt1)||isEditTextEmpty(ETt2)||isEditTextEmpty(ETt3)
+                                    ||isEditTextEmpty(ETt6)||isEditTextEmpty(ETt7)||isEditTextEmpty(ETt8)){
+                                Toast.makeText(PiscinasSector1.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            Piscinas p3A= new Piscinas();
+                            p3A.setUid(UUID.randomUUID().toString());
+                            p3A.setFecha(dateTextView.getText().toString());
+                            p3A.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
+                            p3A.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
+                            p3A.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
+                            p3A.setAlvoleo(Integer.parseInt(Objects.requireNonNull(alVoleoET.getText()).toString()));
+                            p3A.setSobrantecaseta(Integer.parseInt(Objects.requireNonNull(sobranteCasetaET.getText()).toString()));
+                            p3A.setTipobalanceado(tipoBalanceadoSeleccionado);
+                            p3A.setT1(Integer.parseInt(Objects.requireNonNull(ETt1.getText()).toString()));
+                            p3A.setT2(Integer.parseInt(Objects.requireNonNull(ETt2.getText()).toString()));
+                            p3A.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
+                            p3A.setT4(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
+                            p3A.setT5(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
+                            p3A.setT6(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                            databaseReference.child("Piscina 3A").child(p3A.getUid()).setValue(p3A);
+                            //limparcampospiscina1();
+                            verificarDatosEnFirebase6T("Piscina 3A",currentDate);
+                            Toast.makeText(PiscinasSector1.this, "DATOS INGRESADOS", Toast.LENGTH_SHORT).show();
                          } else if (piscinaSeleccionada.equals("Piscina 3B")) {
                             String tipoBalanceadoSeleccionado=autoCompleteTextViewTipos.getText().toString();
                             if (isEditTextEmpty(dietaET)||isEditTextEmpty(sobranteTolvaET)||isEditTextEmpty(alVoleoET)||isEditTextEmpty(sobranteCasetaET)
@@ -459,7 +489,7 @@
                         TVt10.setHint("TOLVA 10");
                         piscinaTV.setError(null);
                         botonGuardar.setEnabled(false);
-                        Toast.makeText(PiscinasSector1.this, "PISCINA PESCADA", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(PiscinasSector1.this, "PISCINA PESCADA", Toast.LENGTH_SHORT).show();
                         verificarDatosEnFirebase10T("Piscina 1",fechaSeleccionada);
                     } else if (piscinaSeleccionada.equals("Piscina 2")) {
                         limpiarCamposPiscina1();
@@ -494,21 +524,25 @@
                         TVz1.setText("ZONA 1");
                         TVz2.setText("ZONA 2");
                         piscinaTV.setError(null);
-                        TVt1.setVisibility(View.INVISIBLE);
-                        TVt2.setVisibility(View.INVISIBLE);
-                        TVt3.setVisibility(View.INVISIBLE);
+                        TVt1.setVisibility(View.VISIBLE);
+                        TVt2.setVisibility(View.VISIBLE);
+                        TVt3.setVisibility(View.VISIBLE);
                         TVt4.setVisibility(View.INVISIBLE);
                         TVt4.setEnabled(false);
                         TVt5.setVisibility(View.INVISIBLE);
                         TVt5.setEnabled(false);
-                        TVt6.setVisibility(View.INVISIBLE);
-                        TVt7.setVisibility(View.INVISIBLE);
-                        TVt8.setVisibility(View.INVISIBLE);
+                        TVt6.setVisibility(View.VISIBLE);
+                        TVt7.setVisibility(View.VISIBLE);
+                        TVt8.setVisibility(View.VISIBLE);
                         TVt9.setVisibility(View.INVISIBLE);
                         TVt10.setVisibility(View.INVISIBLE);
-                        botonGuardar.setEnabled(false);
-                        Toast.makeText(PiscinasSector1.this, "PISCINA NO HABILITADA", Toast.LENGTH_SHORT).show();
-                        //verificarDatosEnFirebase3B("Piscina 3A",fechaSeleccionada);
+                        TVt9.setEnabled(false);
+                        TVt10.setEnabled(false);
+                        TVt6.setHint("TOLVA 4");
+                        TVt7.setHint("TOLVA 5");
+                        TVt8.setHint("TOLVA 6");
+                        botonGuardar.setEnabled(true);
+                        verificarDatosEnFirebase6T("Piscina 3A",fechaSeleccionada);
                     }else if(piscinaSeleccionada.equals("Piscina 3B")){
                         limpiarCamposPiscina1();
                         TVz1.setText("ZONA 2");
@@ -1188,6 +1222,9 @@
                             Long t8 = snapshot.child("t8").getValue(Long.class);
                             Long t9 = snapshot.child("t9").getValue(Long.class);
                             Long t10 = snapshot.child("t10").getValue(Long.class);
+                            Long gramos = snapshot.child("gramosTotalP").getValue(Long.class);
+                            Long porcentaje = snapshot.child("porcentajeSobranteP").getValue(Long.class);
+
 
                             // Convertir Long a String solo si los valores no son null
                             String dietaS = (dieta != null) ? dieta.toString() : "";
@@ -1206,6 +1243,8 @@
                             String t8S = (t8 != null) ? t8.toString() : "";
                             String t9S = (t9 != null) ? t9.toString() : "";
                             String t10S = (t10 != null) ? t10.toString() : "";
+                            String gramosS = (t9 != null) ? t9.toString() : "";
+                            String porcentajeS = (t10 != null) ? t10.toString() : "";
 
                             // Actualizar los campos de la interfaz de usuario
                             dietaET.setText(dietaS);
@@ -1349,6 +1388,9 @@
             ETt8=findViewById(R.id.etT8);
             ETt9=findViewById(R.id.etT9);
             ETt10=findViewById(R.id.etT10);
+
+            // ETGramos=findViewById(R.id.etgramos);
+            // ETPorcentaje=findViewById(R.id.etporcentaje);
 
 
             TVt1.setVisibility(View.INVISIBLE);

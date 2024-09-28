@@ -42,7 +42,7 @@ public class PiscinasSector7 extends AppCompatActivity {
     private TextInputLayout dietaTV,sobranteTolvaTV,recargaTV,alVoleoTV,sobranteCasetaTV,piscinaTV,tiposBalanceadoTV;
     private TextInputEditText dietaET,sobranteTolvaET,sobranteCasetaET,recargaET,alVoleoET;
     private TextInputLayout TVt1,TVt2,TVt3,TVt4,TVt5,TVt6,TVt7,TVt8,TVt9,TVt10;
-    private TextInputEditText ETt1,ETt2,ETt3,ETt4,ETt5,ETt6,ETt7,ETt8,ETt9,ETt10;
+    private TextInputEditText ETt1,ETt2,ETt3,ETt4,ETt5,ETt6,ETt7,ETt8,ETt9,ETt10,ETGramos, ETPorcentaje;
     private String piscinaSeleccionada;
     private TextView dateTextView,TVz1,TVz2;
     MaterialButton botonGuardar,botonInicio,botonActualizar;
@@ -137,41 +137,39 @@ public class PiscinasSector7 extends AppCompatActivity {
                         String tipoBalanceadoSeleccionado=autoCompleteTextViewTipos.getText().toString();
                         if (isEditTextEmpty(dietaET)||isEditTextEmpty(sobranteTolvaET)||isEditTextEmpty(alVoleoET)||isEditTextEmpty(sobranteCasetaET)
                                 ||isEditTextEmpty(recargaET)||tipoBalanceadoSeleccionado.equals("")||isEditTextEmpty(ETt1)||isEditTextEmpty(ETt2)||isEditTextEmpty(ETt3)
-                                ||isEditTextEmpty(ETt4)||isEditTextEmpty(ETt6)||isEditTextEmpty(ETt7)||isEditTextEmpty(ETt8)||isEditTextEmpty(ETt9)){
+                                ||isEditTextEmpty(ETt6)||isEditTextEmpty(ETt7)||isEditTextEmpty(ETt8)){
                             Toast.makeText(PiscinasSector7.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Piscinas p47= new Piscinas();
-                        p47.setUid(UUID.randomUUID().toString());
-                        p47.setFecha(dateTextView.getText().toString());
-                        p47.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
-                        p47.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
-                        p47.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
-                        p47.setAlvoleo(Integer.parseInt(Objects.requireNonNull(alVoleoET.getText()).toString()));
-                        p47.setSobrantecaseta(Integer.parseInt(Objects.requireNonNull(sobranteCasetaET.getText()).toString()));
-                        p47.setTipobalanceado(tipoBalanceadoSeleccionado);
-                        p47.setT1(Integer.parseInt(Objects.requireNonNull(ETt1.getText()).toString()));
-                        p47.setT2(Integer.parseInt(Objects.requireNonNull(ETt2.getText()).toString()));
-                        p47.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
-                        p47.setT4(Integer.parseInt(Objects.requireNonNull(ETt4.getText()).toString()));
-                        p47.setT5(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
-                        p47.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
-                        p47.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
-                        p47.setT8(Integer.parseInt(Objects.requireNonNull(ETt9.getText()).toString()));
-                        databaseReference.child("Piscina 37").child(p47.getUid()).setValue(p47);
+                        Piscinas p37= new Piscinas();
+                        p37.setUid(UUID.randomUUID().toString());
+                        p37.setFecha(dateTextView.getText().toString());
+                        p37.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
+                        p37.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
+                        p37.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
+                        p37.setAlvoleo(Integer.parseInt(Objects.requireNonNull(alVoleoET.getText()).toString()));
+                        p37.setSobrantecaseta(Integer.parseInt(Objects.requireNonNull(sobranteCasetaET.getText()).toString()));
+                        p37.setTipobalanceado(tipoBalanceadoSeleccionado);
+                        p37.setT1(Integer.parseInt(Objects.requireNonNull(ETt1.getText()).toString()));
+                        p37.setT2(Integer.parseInt(Objects.requireNonNull(ETt2.getText()).toString()));
+                        p37.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
+                        p37.setT4(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
+                        p37.setT5(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
+                        p37.setT6(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        databaseReference.child("Piscina 37").child(p37.getUid()).setValue(p37);
                         //limparcampospiscina1();
-                        //verificarDatosEnFirebase8T("Piscina 37",currentDate);
+                        verificarDatosEnFirebase6T("Piscina 37",currentDate);
                         Toast.makeText(PiscinasSector7.this, "DATOS INGRESADOS", Toast.LENGTH_SHORT).show();
 
                     } else if (piscinaSeleccionada.equals("Piscina 38A")) {
                         String tipoBalanceadoSeleccionado=autoCompleteTextViewTipos.getText().toString();
                         if (isEditTextEmpty(dietaET)||isEditTextEmpty(sobranteTolvaET)||isEditTextEmpty(alVoleoET)||isEditTextEmpty(sobranteCasetaET)
                                 ||isEditTextEmpty(recargaET)||tipoBalanceadoSeleccionado.equals("")||isEditTextEmpty(ETt1)||isEditTextEmpty(ETt2)||isEditTextEmpty(ETt3)
-                                ||isEditTextEmpty(ETt4)||isEditTextEmpty(ETt5)||isEditTextEmpty(ETt6)||isEditTextEmpty(ETt7)||isEditTextEmpty(ETt8)||isEditTextEmpty(ETt9)||isEditTextEmpty(ETt10)){
+                                ||isEditTextEmpty(ETt6)||isEditTextEmpty(ETt7)||isEditTextEmpty(ETt8)){
                             Toast.makeText(PiscinasSector7.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Piscinas p38A = new Piscinas();
+                        Piscinas p38A= new Piscinas();
                         p38A.setUid(UUID.randomUUID().toString());
                         p38A.setFecha(dateTextView.getText().toString());
                         p38A.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
@@ -183,16 +181,12 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p38A.setT1(Integer.parseInt(Objects.requireNonNull(ETt1.getText()).toString()));
                         p38A.setT2(Integer.parseInt(Objects.requireNonNull(ETt2.getText()).toString()));
                         p38A.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
-                        p38A.setT4(Integer.parseInt(Objects.requireNonNull(ETt4.getText()).toString()));
-                        p38A.setT5(Integer.parseInt(Objects.requireNonNull(ETt5.getText()).toString()));
-                        p38A.setT6(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
-                        p38A.setT7(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
-                        p38A.setT8(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
-                        p38A.setT9(Integer.parseInt(Objects.requireNonNull(ETt9.getText()).toString()));
-                        p38A.setT10(Integer.parseInt(Objects.requireNonNull(ETt10.getText()).toString()));
-                        databaseReference.child("Piscina 41").child(p38A.getUid()).setValue(p38A);
+                        p38A.setT4(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
+                        p38A.setT5(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
+                        p38A.setT6(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        databaseReference.child("Piscina 38A").child(p38A.getUid()).setValue(p38A);
                         //limparcampospiscina1();
-                        verificarDatosEnFirebase10T("Piscina 41",currentDate);
+                        verificarDatosEnFirebase6T("Piscina 38A",currentDate);
                         Toast.makeText(PiscinasSector7.this, "DATOS INGRESADOS", Toast.LENGTH_SHORT).show();
 
                     }else if (piscinaSeleccionada.equals("Piscina 38B")) {
@@ -203,24 +197,24 @@ public class PiscinasSector7 extends AppCompatActivity {
                             Toast.makeText(PiscinasSector7.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Piscinas p49= new Piscinas();
-                        p49.setUid(UUID.randomUUID().toString());
-                        p49.setFecha(dateTextView.getText().toString());
-                        p49.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
-                        p49.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
-                        p49.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
-                        p49.setAlvoleo(Integer.parseInt(Objects.requireNonNull(alVoleoET.getText()).toString()));
-                        p49.setSobrantecaseta(Integer.parseInt(Objects.requireNonNull(sobranteCasetaET.getText()).toString()));
-                        p49.setTipobalanceado(tipoBalanceadoSeleccionado);
-                        p49.setT1(Integer.parseInt(Objects.requireNonNull(ETt1.getText()).toString()));
-                        p49.setT2(Integer.parseInt(Objects.requireNonNull(ETt2.getText()).toString()));
-                        p49.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
-                        p49.setT4(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
-                        p49.setT5(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
-                        p49.setT6(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
-                        databaseReference.child("Piscina 38B").child(p49.getUid()).setValue(p49);
+                        Piscinas p38B= new Piscinas();
+                        p38B.setUid(UUID.randomUUID().toString());
+                        p38B.setFecha(dateTextView.getText().toString());
+                        p38B.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
+                        p38B.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
+                        p38B.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
+                        p38B.setAlvoleo(Integer.parseInt(Objects.requireNonNull(alVoleoET.getText()).toString()));
+                        p38B.setSobrantecaseta(Integer.parseInt(Objects.requireNonNull(sobranteCasetaET.getText()).toString()));
+                        p38B.setTipobalanceado(tipoBalanceadoSeleccionado);
+                        p38B.setT1(Integer.parseInt(Objects.requireNonNull(ETt1.getText()).toString()));
+                        p38B.setT2(Integer.parseInt(Objects.requireNonNull(ETt2.getText()).toString()));
+                        p38B.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
+                        p38B.setT4(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
+                        p38B.setT5(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
+                        p38B.setT6(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        databaseReference.child("Piscina 38B").child(p38B.getUid()).setValue(p38B);
                         //limparcampospiscina1();
-                        //verificarDatosEnFirebase6T("Piscina 38B",currentDate);
+                        verificarDatosEnFirebase6T("Piscina 38B",currentDate);
                         Toast.makeText(PiscinasSector7.this, "DATOS INGRESADOS", Toast.LENGTH_SHORT).show();
                     } else if (piscinaSeleccionada.equals("Piscina 39")) {
                         String tipoBalanceadoSeleccionado=autoCompleteTextViewTipos.getText().toString();
@@ -370,7 +364,7 @@ public class PiscinasSector7 extends AppCompatActivity {
                         String tipoBalanceadoSeleccionado=autoCompleteTextViewTipos.getText().toString();
                         if (isEditTextEmpty(dietaET)||isEditTextEmpty(sobranteTolvaET)||isEditTextEmpty(alVoleoET)||isEditTextEmpty(sobranteCasetaET)
                                 ||isEditTextEmpty(recargaET)||tipoBalanceadoSeleccionado.equals("")||isEditTextEmpty(ETt1)||isEditTextEmpty(ETt2)||isEditTextEmpty(ETt3)
-                                ||isEditTextEmpty(ETt4)||isEditTextEmpty(ETt6)||isEditTextEmpty(ETt7)||isEditTextEmpty(ETt8)||isEditTextEmpty(ETt9)){
+                                ||isEditTextEmpty(ETt4)||isEditTextEmpty(ETt6)||isEditTextEmpty(ETt7)||isEditTextEmpty(ETt8)){
                             Toast.makeText(PiscinasSector7.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                             return;
                         }
@@ -390,10 +384,9 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p44.setT5(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
                         p44.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p44.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
-                        p44.setT8(Integer.parseInt(Objects.requireNonNull(ETt9.getText()).toString()));
                         databaseReference.child("Piscina 44").child(p44.getUid()).setValue(p44);
                         //limparcampospiscina1();
-                        verificarDatosEnFirebase8T("Piscina 44",currentDate);
+                        verificarDatosEnFirebase7T("Piscina 44",currentDate);
                         Toast.makeText(PiscinasSector7.this, "DATOS INGRESADOS", Toast.LENGTH_SHORT).show();
                     } else if (piscinaSeleccionada.equals("Piscina 45")) {
                         String tipoBalanceadoSeleccionado=autoCompleteTextViewTipos.getText().toString();
@@ -526,120 +519,98 @@ public class PiscinasSector7 extends AppCompatActivity {
                     limpiarCamposPiscina1();
                     TVz1.setText("ZONA 1");
                     TVz2.setText("ZONA 2");
-                    Toast.makeText(PiscinasSector7.this, "PISCINA NO HABILITADA", Toast.LENGTH_SHORT).show();
                     piscinaTV.setError(null);
-                    TVt1.setVisibility(View.INVISIBLE);
-                    TVt1.setEnabled(true);
-                    TVt2.setVisibility(View.INVISIBLE);
-                    TVt2.setEnabled(true);
-                    TVt3.setVisibility(View.INVISIBLE);
-                    TVt3.setEnabled(true);
+                    TVt1.setVisibility(View.VISIBLE);
+                    TVt2.setVisibility(View.VISIBLE);
+                    TVt3.setVisibility(View.VISIBLE);
                     TVt4.setVisibility(View.INVISIBLE);
                     TVt4.setEnabled(false);
                     TVt5.setVisibility(View.INVISIBLE);
-                    TVt4.setEnabled(false);
-                    TVt6.setVisibility(View.INVISIBLE);
-                    TVt6.setEnabled(true);
-                    TVt7.setVisibility(View.INVISIBLE);
-                    TVt7.setEnabled(true);
-                    TVt8.setVisibility(View.INVISIBLE);
-                    TVt8.setEnabled(true);
+                    TVt5.setEnabled(false);
+                    TVt6.setVisibility(View.VISIBLE);
+                    TVt7.setVisibility(View.VISIBLE);
+                    TVt8.setVisibility(View.VISIBLE);
                     TVt9.setVisibility(View.INVISIBLE);
-                    TVt9.setEnabled(false);
                     TVt10.setVisibility(View.INVISIBLE);
                     TVt9.setEnabled(false);
-                    botonGuardar.setEnabled(false);
-                    //verificarDatosEnFirebase6T("Piscina 12",fechaSeleccionada);
+                    TVt10.setEnabled(false);
+                    TVt6.setHint("TOLVA 4");
+                    TVt7.setHint("TOLVA 5");
+                    TVt8.setHint("TOLVA 6");
+                    botonGuardar.setEnabled(true);
+                    verificarDatosEnFirebase6T("Piscina 37",fechaSeleccionada);
                 } else if (piscinaSeleccionada.equals("Piscina 38A")) {
                     limpiarCamposPiscina1();
                     TVz1.setText("ZONA 1");
                     TVz2.setText("ZONA 2");
                     piscinaTV.setError(null);
                     TVt1.setVisibility(View.VISIBLE);
-                    TVt1.setEnabled(true);
                     TVt2.setVisibility(View.VISIBLE);
-                    TVt2.setEnabled(true);
                     TVt3.setVisibility(View.VISIBLE);
-                    TVt3.setEnabled(true);
-                    TVt4.setVisibility(View.VISIBLE);
-                    TVt4.setEnabled(true);
-                    TVt5.setVisibility(View.VISIBLE);
-                    TVt5.setEnabled(true);
-                    TVt6.setVisibility(View.VISIBLE);
-                    TVt6.setEnabled(true);
-                    TVt6.setHint("TOLVA 6");
-                    TVt7.setVisibility(View.VISIBLE);
-                    TVt7.setEnabled(true);
-                    TVt7.setHint("TOLVA 7");
-                    TVt8.setVisibility(View.VISIBLE);
-                    TVt8.setEnabled(true);
-                    TVt8.setHint("TOLVA 8");
-                    TVt9.setVisibility(View.VISIBLE);
-                    TVt9.setEnabled(true);
-                    TVt9.setHint("TOLVA 9");
-                    TVt10.setVisibility(View.VISIBLE);
-                    TVt10.setEnabled(true);
-                    TVt10.setHint("TOLVA 10");
-                    botonGuardar.setEnabled(false);
-                    //verificarDatosEnFirebase10T("Piscina 38A",fechaSeleccionada);
-                } else if(piscinaSeleccionada.equals("Piscina 38B")){
-                    limpiarCamposPiscina1();
-                    TVz1.setText("ZONA 1");
-                    TVz2.setText("ZONA 2");
-                    Toast.makeText(PiscinasSector7.this, "PISCINA NO HABILITADA", Toast.LENGTH_SHORT).show();
-                    piscinaTV.setError(null);
-                    TVt1.setVisibility(View.INVISIBLE);
-                    TVt1.setEnabled(true);
-                    TVt2.setVisibility(View.INVISIBLE);
-                    TVt2.setEnabled(true);
-                    TVt3.setVisibility(View.INVISIBLE);
-                    TVt3.setEnabled(true);
-                    TVt4.setVisibility(View.INVISIBLE);
-                    TVt4.setEnabled(false);
-                    TVt5.setVisibility(View.INVISIBLE);
-                    TVt4.setEnabled(false);
-                    TVt6.setVisibility(View.INVISIBLE);
-                    TVt6.setEnabled(true);
-                    TVt7.setVisibility(View.INVISIBLE);
-                    TVt7.setEnabled(true);
-                    TVt8.setVisibility(View.INVISIBLE);
-                    TVt8.setEnabled(true);
-                    TVt9.setVisibility(View.INVISIBLE);
-                    TVt9.setEnabled(false);
-                    TVt10.setVisibility(View.INVISIBLE);
-                    TVt9.setEnabled(false);
-                    botonGuardar.setEnabled(false);
-                    //verificarDatosEnFirebase6T("Piscina 12",fechaSeleccionada);
-                }else if(piscinaSeleccionada.equals("Piscina 39")){
-                    TVz1.setText("ZONA 2");
-                    TVz2.setText("ZONA 1");
-                    limpiarCamposPiscina1();
-                    piscinaTV.setError(null);
-                    TVt1.setVisibility(View.VISIBLE);
-                    TVt1.setEnabled(true);
-                    TVt2.setVisibility(View.VISIBLE);
-                    TVt2.setEnabled(true);
-                    TVt3.setVisibility(View.VISIBLE);
-                    TVt3.setEnabled(true);
                     TVt4.setVisibility(View.INVISIBLE);
                     TVt4.setEnabled(false);
                     TVt5.setVisibility(View.INVISIBLE);
                     TVt5.setEnabled(false);
                     TVt6.setVisibility(View.VISIBLE);
-                    TVt6.setEnabled(true);
-                    TVt6.setHint("TOLVA 4");
                     TVt7.setVisibility(View.VISIBLE);
-                    TVt7.setEnabled(true);
-                    TVt7.setHint("TOLVA 5");
                     TVt8.setVisibility(View.VISIBLE);
-                    TVt8.setEnabled(true);
-                    TVt8.setHint("TOLVA 6");
                     TVt9.setVisibility(View.INVISIBLE);
-                    TVt9.setEnabled(false);
                     TVt10.setVisibility(View.INVISIBLE);
                     TVt9.setEnabled(false);
-                    botonGuardar.setEnabled(false);
-                    //verificarDatosEnFirebase6T("Piscina 39",fechaSeleccionada);
+                    TVt10.setEnabled(false);
+                    TVt6.setHint("TOLVA 4");
+                    TVt7.setHint("TOLVA 5");
+                    TVt8.setHint("TOLVA 6");
+                    botonGuardar.setEnabled(true);
+                    verificarDatosEnFirebase6T("Piscina 38A",fechaSeleccionada);
+                } else if(piscinaSeleccionada.equals("Piscina 38B")){
+                    limpiarCamposPiscina1();
+                    TVz1.setText("ZONA 1");
+                    TVz2.setText("ZONA 2");
+                    piscinaTV.setError(null);
+                    TVt1.setVisibility(View.VISIBLE);
+                    TVt2.setVisibility(View.VISIBLE);
+                    TVt3.setVisibility(View.VISIBLE);
+                    TVt4.setVisibility(View.INVISIBLE);
+                    TVt4.setEnabled(false);
+                    TVt5.setVisibility(View.INVISIBLE);
+                    TVt5.setEnabled(false);
+                    TVt6.setVisibility(View.VISIBLE);
+                    TVt7.setVisibility(View.VISIBLE);
+                    TVt8.setVisibility(View.VISIBLE);
+                    TVt9.setVisibility(View.INVISIBLE);
+                    TVt10.setVisibility(View.INVISIBLE);
+                    TVt9.setEnabled(false);
+                    TVt10.setEnabled(false);
+                    TVt6.setHint("TOLVA 4");
+                    TVt7.setHint("TOLVA 5");
+                    TVt8.setHint("TOLVA 6");
+                    botonGuardar.setEnabled(true);
+                    verificarDatosEnFirebase6T("Piscina 38B",fechaSeleccionada);
+                }else if(piscinaSeleccionada.equals("Piscina 39")){
+                    limpiarCamposPiscina1();
+                    TVz1.setText("ZONA 1");
+                    TVz2.setText("ZONA 2");
+                    piscinaTV.setError(null);
+                    TVt1.setVisibility(View.VISIBLE);
+                    TVt2.setVisibility(View.VISIBLE);
+                    TVt3.setVisibility(View.VISIBLE);
+                    TVt4.setVisibility(View.INVISIBLE);
+                    TVt4.setEnabled(false);
+                    TVt5.setVisibility(View.INVISIBLE);
+                    TVt5.setEnabled(false);
+                    TVt6.setVisibility(View.VISIBLE);
+                    TVt7.setVisibility(View.VISIBLE);
+                    TVt8.setVisibility(View.VISIBLE);
+                    TVt9.setVisibility(View.INVISIBLE);
+                    TVt10.setVisibility(View.INVISIBLE);
+                    TVt9.setEnabled(false);
+                    TVt10.setEnabled(false);
+                    TVt6.setHint("TOLVA 4");
+                    TVt7.setHint("TOLVA 5");
+                    TVt8.setHint("TOLVA 6");
+                    botonGuardar.setEnabled(true);
+                    verificarDatosEnFirebase6T("Piscina 39",fechaSeleccionada);
                 } else if (piscinaSeleccionada.equals("Piscina 40")) {
                     limpiarCamposPiscina1();
                     TVz1.setText("ZONA 1");
@@ -669,8 +640,8 @@ public class PiscinasSector7 extends AppCompatActivity {
                     TVt9.setHint("TOLVA 8");
                     TVt10.setVisibility(View.INVISIBLE);
                     TVt10.setEnabled(false);
-                    botonGuardar.setEnabled(false);
-                    //verificarDatosEnFirebase8T("Piscina 40",fechaSeleccionada);
+                    botonGuardar.setEnabled(true);
+                    verificarDatosEnFirebase8T("Piscina 40",fechaSeleccionada);
                 } else if (piscinaSeleccionada.equals("Piscina 41")) {
                     limpiarCamposPiscina1();
                     TVz1.setText("ZONA 1");
@@ -701,8 +672,8 @@ public class PiscinasSector7 extends AppCompatActivity {
                     TVt10.setVisibility(View.VISIBLE);
                     TVt10.setEnabled(true);
                     TVt10.setHint("TOLVA 10");
-                    botonGuardar.setEnabled(false);
-                    //verificarDatosEnFirebase10T("Piscina 41",fechaSeleccionada);
+                    botonGuardar.setEnabled(true);
+                    verificarDatosEnFirebase10T("Piscina 41",fechaSeleccionada);
                 } else if (piscinaSeleccionada.equals("Piscina 42")) {
                     limpiarCamposPiscina1();
                     TVz1.setText("ZONA 1");
@@ -763,7 +734,6 @@ public class PiscinasSector7 extends AppCompatActivity {
                     limpiarCamposPiscina1();
                     TVz1.setText("ZONA 1");
                     TVz2.setText("ZONA 2");
-                    piscinaTV.setError(null);
                     TVt1.setVisibility(View.VISIBLE);
                     TVt1.setEnabled(true);
                     TVt2.setVisibility(View.VISIBLE);
@@ -783,13 +753,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                     TVt8.setVisibility(View.VISIBLE);
                     TVt8.setEnabled(true);
                     TVt8.setHint("TOLVA 7");
-                    TVt9.setVisibility(View.VISIBLE);
-                    TVt9.setEnabled(true);
-                    TVt9.setHint("TOLVA 8");
+                    TVt9.setVisibility(View.INVISIBLE);
+                    TVt9.setEnabled(false);
                     TVt10.setVisibility(View.INVISIBLE);
-                    TVt10.setEnabled(false);
-                    botonGuardar.setEnabled(false);
-                    //verificarDatosEnFirebase8T("Piscina 44",fechaSeleccionada);
+                    botonGuardar.setEnabled(true);
+                    verificarDatosEnFirebase7T("Piscina 44",fechaSeleccionada);
                 } else if (piscinaSeleccionada.equals("Piscina 45")) {
                     TVz1.setText("ZONA 2");
                     TVz2.setText("ZONA 1");
@@ -1750,6 +1718,9 @@ public class PiscinasSector7 extends AppCompatActivity {
         ETt8=findViewById(R.id.etT8);
         ETt9=findViewById(R.id.etT9);
         ETt10=findViewById(R.id.etT10);
+
+        //ETGramos=findViewById(R.id.etgramos);
+        //ETPorcentaje=findViewById(R.id.etporcentaje);
 
 
         TVt1.setVisibility(View.INVISIBLE);

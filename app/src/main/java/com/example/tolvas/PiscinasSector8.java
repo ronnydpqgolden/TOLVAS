@@ -42,7 +42,7 @@ public class PiscinasSector8 extends AppCompatActivity {
     private TextInputLayout dietaTV,sobranteTolvaTV,recargaTV,alVoleoTV,sobranteCasetaTV,piscinaTV,tiposBalanceadoTV;
     private TextInputEditText dietaET,sobranteTolvaET,sobranteCasetaET,recargaET,alVoleoET;
     private TextInputLayout TVt1,TVt2,TVt3,TVt4,TVt5,TVt6,TVt7,TVt8,TVt9,TVt10;
-    private TextInputEditText ETt1,ETt2,ETt3,ETt4,ETt5,ETt6,ETt7,ETt8,ETt9,ETt10;
+    private TextInputEditText ETt1,ETt2,ETt3,ETt4,ETt5,ETt6,ETt7,ETt8,ETt9,ETt10,ETGramos, ETPorcentaje;
     private String piscinaSeleccionada;
     private TextView dateTextView,TVz1,TVz2;
     MaterialButton botonGuardar,botonInicio,botonActualizar;
@@ -517,8 +517,8 @@ public class PiscinasSector8 extends AppCompatActivity {
                     verificarDatosEnFirebase6T("Piscina 48",fechaSeleccionada);
                 } else if(piscinaSeleccionada.equals("Piscina 49")){
                     limpiarCamposPiscina1();
-                    TVz1.setText("ZONA 1");
-                    TVz2.setText("ZONA 2");
+                    TVz1.setText("ZONA 2");
+                    TVz2.setText("ZONA 1");
                     piscinaTV.setError(null);
                     TVt1.setVisibility(View.VISIBLE);
                     TVt2.setVisibility(View.VISIBLE);
@@ -537,8 +537,8 @@ public class PiscinasSector8 extends AppCompatActivity {
                     TVt6.setHint("TOLVA 4");
                     TVt7.setHint("TOLVA 5");
                     TVt8.setHint("TOLVA 6");
-                    botonGuardar.setEnabled(false);
-                    //verificarDatosEnFirebase6T("Piscina 49",fechaSeleccionada);
+                    botonGuardar.setEnabled(true);
+                    verificarDatosEnFirebase6T("Piscina 49",fechaSeleccionada);
                 }else if(piscinaSeleccionada.equals("Piscina 50")){
                     limpiarCamposPiscina1();
                     TVz1.setText("ZONA 1");
@@ -1493,10 +1493,7 @@ public class PiscinasSector8 extends AppCompatActivity {
                         actualizarDatosEnFirebase10T(piscinaSeleccionada,currentDate);
                     }
                 } else {
-                    // No se encontraron datos para la fecha seleccionada
-                    //Toast.makeText(PiscinasSector8.this, "No existen datos para esta fecha", Toast.LENGTH_SHORT).show();
 
-                    // Habilitar el botón de guardar
                     botonGuardar.setEnabled(true);
                     botonGuardar.setText("GUARDAR");
                     botonActualizar.setVisibility(View.INVISIBLE);
@@ -1611,6 +1608,8 @@ public class PiscinasSector8 extends AppCompatActivity {
         ETt8=findViewById(R.id.etT8);
         ETt9=findViewById(R.id.etT9);
         ETt10=findViewById(R.id.etT10);
+        //ETGramos=findViewById(R.id.etgramos);
+        //ETPorcentaje=findViewById(R.id.etporcentaje);
 
 
         TVt1.setVisibility(View.INVISIBLE);
