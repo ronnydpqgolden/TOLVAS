@@ -469,7 +469,7 @@ public class ReporteSector8 extends AppCompatActivity {
                                                                                         alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                                                                         tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
-                                                                                        htmlBuilder.append("<tr><td>52</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p55t1).append("</td><td>").append(p55t2).append("</td><td>").append(p55t3).append("</td><td>").append(p55t4).append("</td><td>").append(p55t5).append("</td><td>").append(p55t6).append("</td></tr>");
+                                                                                        htmlBuilder.append("<tr><td>55</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p55t1).append("</td><td>").append(p55t2).append("</td><td>").append(p55t3).append("</td><td>").append(p55t4).append("</td><td>").append(p55t5).append("</td><td>").append(p55t6).append("</td></tr>");
                                                                                     }
                                                                                 }
 

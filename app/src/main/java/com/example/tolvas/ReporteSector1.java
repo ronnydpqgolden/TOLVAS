@@ -335,6 +335,7 @@ public class ReporteSector1 extends AppCompatActivity {
                                                                 Integer p5At7 = snapshot.child("t7").getValue(Integer.class);
                                                                 Integer p5At8 = snapshot.child("t8").getValue(Integer.class);
                                                                 Integer p5At9 = snapshot.child("t9").getValue(Integer.class);
+                                                                Integer p5At10 = snapshot.child("t10").getValue(Integer.class);
 
                                                                 p5At1 = (p5At1 != null) ? p5At1 : 0;
                                                                 p5At2 = (p5At2 != null) ? p5At2 : 0;
@@ -345,6 +346,7 @@ public class ReporteSector1 extends AppCompatActivity {
                                                                 p5At7 = (p5At7 != null) ? p5At7 : 0;
                                                                 p5At8 = (p5At8 != null) ? p5At8 : 0;
                                                                 p5At9 = (p5At9 != null) ? p5At9 : 0;
+                                                                p5At10 = (p5At10 != null) ? p5At10 : 0;
 
                                                                 dieta = (dieta != null) ? dieta * 25 : 0;
                                                                 recarga = (recarga != null) ? recarga * 25 : 0;
@@ -353,7 +355,7 @@ public class ReporteSector1 extends AppCompatActivity {
                                                                 alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                                                 tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
-                                                                htmlBuilder.append("<tr><td>5A</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p5At1).append("</td><td>").append(p5At2).append("</td><td>").append(p5At3).append("</td><td>").append(p5At4).append("</td><td>").append(p5At5).append("</td><td>").append(p5At6).append("</td><td>").append(p5At7).append("</td><td>").append(p5At8).append("</td><td>").append(p5At9).append("</td></tr>");
+                                                                htmlBuilder.append("<tr><td>5A</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p5At1).append("</td><td>").append(p5At2).append("</td><td>").append(p5At3).append("</td><td>").append(p5At4).append("</td><td>").append(p5At5).append("</td><td>").append(p5At6).append("</td><td>").append(p5At7).append("</td><td>").append(p5At8).append("</td><td>").append(p5At9).append("</td><td>").append(p5At10).append("</td></tr>");
                                                             }
                                                         }
 

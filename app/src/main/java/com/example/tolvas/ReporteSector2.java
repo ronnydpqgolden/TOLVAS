@@ -399,6 +399,8 @@ public class ReporteSector2 extends AppCompatActivity {
                                                                                 Integer p15t4 = snapshot.child("t4").getValue(Integer.class);
                                                                                 Integer p15t5 = snapshot.child("t5").getValue(Integer.class);
                                                                                 Integer p15t6 = snapshot.child("t6").getValue(Integer.class);
+                                                                                Integer p15t7 = snapshot.child("t7").getValue(Integer.class);
+                                                                                Integer p15t8 = snapshot.child("t8").getValue(Integer.class);
 
                                                                                 p15t1 = (p15t1 != null) ? p15t1 : 0;
                                                                                 p15t2 = (p15t2 != null) ? p15t2 : 0;
@@ -406,6 +408,8 @@ public class ReporteSector2 extends AppCompatActivity {
                                                                                 p15t4 = (p15t4 != null) ? p15t4 : 0;
                                                                                 p15t5 = (p15t5 != null) ? p15t5 : 0;
                                                                                 p15t6 = (p15t6 != null) ? p15t6 : 0;
+                                                                                p15t7 = (p15t7 != null) ? p15t7 : 0;
+                                                                                p15t8 = (p15t8 != null) ? p15t8 : 0;
 
                                                                                 dieta = (dieta != null) ? dieta * 25 : 0;
                                                                                 recarga = (recarga != null) ? recarga * 25 : 0;
@@ -414,7 +418,7 @@ public class ReporteSector2 extends AppCompatActivity {
                                                                                 alVoleo = (alVoleo != null) ? alVoleo * 25 : 0;
                                                                                 tipoBalanceado = (tipoBalanceado != null) ? tipoBalanceado : "";
 
-                                                                                htmlBuilder.append("<tr><td>15</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p15t1).append("</td><td>").append(p15t2).append("</td><td>").append(p15t3).append("</td><td>").append(p15t4).append("</td><td>").append(p15t5).append("</td><td>").append(p15t6).append("</td></tr>");
+                                                                                htmlBuilder.append("<tr><td>15</td><td>").append(dieta).append("</td><td>").append(sobranteTolva).append("</td><td>").append(recarga).append("</td><td>").append(alVoleo).append("</td><td>").append(sobranteCaseta).append("</td><td>").append(tipoBalanceado).append("</td><td>").append(p15t1).append("</td><td>").append(p15t2).append("</td><td>").append(p15t3).append("</td><td>").append(p15t4).append("</td><td>").append(p15t5).append("</td><td>").append(p15t6).append("</td><td>").append(p15t7).append("</td><td>").append(p15t8).append("</td></tr>");
                                                                             }
                                                                         }
 

@@ -286,7 +286,7 @@
                             String tipoBalanceadoSeleccionado=autoCompleteTextViewTipos.getText().toString();
                             if (isEditTextEmpty(dietaET)||isEditTextEmpty(sobranteTolvaET)||isEditTextEmpty(alVoleoET)||isEditTextEmpty(sobranteCasetaET)
                                     ||isEditTextEmpty(recargaET)||tipoBalanceadoSeleccionado.equals("")||isEditTextEmpty(ETt1)||isEditTextEmpty(ETt2)||isEditTextEmpty(ETt3)
-                                    ||isEditTextEmpty(ETt4)||isEditTextEmpty(ETt5)||isEditTextEmpty(ETt6)||isEditTextEmpty(ETt7)||isEditTextEmpty(ETt8)||isEditTextEmpty(ETt9)){
+                                    ||isEditTextEmpty(ETt4)||isEditTextEmpty(ETt5)||isEditTextEmpty(ETt6)||isEditTextEmpty(ETt7)||isEditTextEmpty(ETt8)||isEditTextEmpty(ETt9)||isEditTextEmpty(ETt10)){
                                 Toast.makeText(PiscinasSector1.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                                 return;
                             }
@@ -308,9 +308,15 @@
                             p5A.setT7(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                             p5A.setT8(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
                             p5A.setT9(Integer.parseInt(Objects.requireNonNull(ETt9.getText()).toString()));
+                            p5A.setT10(Integer.parseInt(Objects.requireNonNull(ETt10.getText()).toString()));
+                            //p1.setGramosTotalP(Integer.parseInt(Objects.requireNonNull(ETGramos.getText()).toString()));
+                            //p1.setPorcentajeSobranteP(Integer.parseInt(Objects.requireNonNull(ETPorcentaje.getText()).toString()));
+                            //p1.setGramosTotalP(Integer.parseInt(Objects.requireNonNull(ETGramos.getText()).toString()));
+                            //p1.setPorcentajeSobranteP(Integer.parseInt(Objects.requireNonNull(ETPorcentaje.getText()).toString()));
                             databaseReference.child("Piscina 5A").child(p5A.getUid()).setValue(p5A);
+
                             //limparcampospiscina1();
-                            verificarDatosEnFirebase9T("Piscina 5A",currentDate);
+                            verificarDatosEnFirebase10T("Piscina 1",currentDate);
                             Toast.makeText(PiscinasSector1.this, "DATOS INGRESADOS", Toast.LENGTH_SHORT).show();
                         }else if (piscinaSeleccionada.equals("Piscina 5B")) {
                             Toast.makeText(PiscinasSector1.this, "PISCINA NO HABILITADA", Toast.LENGTH_SHORT).show();
@@ -601,6 +607,7 @@
                         limpiarCamposPiscina1();
                         TVz1.setText("ZONA 1");
                         TVz2.setText("ZONA 2");
+                        piscinaTV.setError(null);
                         TVt1.setVisibility(View.VISIBLE);
                         TVt1.setEnabled(true);
                         TVt2.setVisibility(View.VISIBLE);
@@ -623,11 +630,13 @@
                         TVt9.setVisibility(View.VISIBLE);
                         TVt9.setEnabled(true);
                         TVt9.setHint("TOLVA 9");
-                        TVt10.setVisibility(View.INVISIBLE);
+                        TVt10.setVisibility(View.VISIBLE);
+                        TVt10.setEnabled(true);
                         TVt10.setHint("TOLVA 10");
-                        TVt10.setEnabled(false);
+                        piscinaTV.setError(null);
                         botonGuardar.setEnabled(false);
-                        verificarDatosEnFirebase9T("Piscina 5A",fechaSeleccionada);
+                        //Toast.makeText(PiscinasSector1.this, "PISCINA PESCADA", Toast.LENGTH_SHORT).show();
+                        verificarDatosEnFirebase10T("Piscina 5A",fechaSeleccionada);
                     } else if (piscinaSeleccionada.equals("Piscina 5B")) {
                         limpiarCamposPiscina1();
                         TVz1.setText("ZONA 1");
