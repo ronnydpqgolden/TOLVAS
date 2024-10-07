@@ -42,7 +42,7 @@ public class PiscinasSector5 extends AppCompatActivity {
     private TextInputLayout dietaTV,sobranteTolvaTV,recargaTV,alVoleoTV,sobranteCasetaTV,piscinaTV,tiposBalanceadoTV;
     private TextInputEditText dietaET,sobranteTolvaET,sobranteCasetaET,recargaET,alVoleoET;
     private TextInputLayout TVt1,TVt2,TVt3,TVt4,TVt5,TVt6,TVt7,TVt8,TVt9,TVt10;
-    private TextInputEditText ETt1,ETt2,ETt3,ETt4,ETt5,ETt6,ETt7,ETt8,ETt9,ETt10,ETGramos, ETPorcentaje;
+    private TextInputEditText ETt1,ETt2,ETt3,ETt4,ETt5,ETt6,ETt7,ETt8,ETt9,ETt10,ETRojo, ETFresco, ETReportado, ETObservaciones;
     private String piscinaSeleccionada;
     private TextView dateTextView,TVz1,TVz2;
     MaterialButton botonGuardar,botonInicio,botonActualizar;
@@ -66,7 +66,12 @@ public class PiscinasSector5 extends AppCompatActivity {
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
         currentDate = sdf.format(new Date());
-        dateTextView.setText(currentDate);
+        SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE", new Locale("es", "ES"));
+        String currentDay = sdf2.format(new Date());
+
+        dateTextView.setText(currentDay+", "+currentDate);
+
+
 
 
         insertarDatosPiscinasSector5();
@@ -134,6 +139,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                                 nodoReferencia.child("t6").setValue(parseLong(ETt7.getText().toString()));
                                 nodoReferencia.child("t7").setValue(parseLong(ETt8.getText().toString()));
 
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
+
                                 Toast.makeText(PiscinasSector5.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
                                 inicializarCamposVariables();
@@ -181,6 +191,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                                 nodoReferencia.child("t3").setValue(parseLong(ETt3.getText().toString()));
                                 nodoReferencia.child("t4").setValue(parseLong(ETt4.getText().toString()));
 
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
+
                                 Toast.makeText(PiscinasSector5.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
                                 inicializarCamposVariables();
@@ -227,6 +242,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                                 nodoReferencia.child("t3").setValue(parseLong(ETt3.getText().toString()));
                                 nodoReferencia.child("t4").setValue(parseLong(ETt6.getText().toString()));
                                 nodoReferencia.child("t5").setValue(parseLong(ETt7.getText().toString()));
+
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
 
                                 Toast.makeText(PiscinasSector5.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
@@ -279,6 +299,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                                 nodoReferencia.child("t7").setValue(parseLong(ETt8.getText().toString()));
                                 nodoReferencia.child("t8").setValue(parseLong(ETt9.getText().toString()));
 
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
+
                                 Toast.makeText(PiscinasSector5.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
                                 inicializarCamposVariables();
@@ -329,6 +354,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                                 nodoReferencia.child("t7").setValue(parseLong(ETt7.getText().toString()));
                                 nodoReferencia.child("t8").setValue(parseLong(ETt8.getText().toString()));
                                 nodoReferencia.child("t9").setValue(parseLong(ETt9.getText().toString()));
+
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
 
                                 Toast.makeText(PiscinasSector5.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
@@ -383,6 +413,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                                 nodoReferencia.child("t9").setValue(parseLong(ETt9.getText().toString()));
                                 nodoReferencia.child("t10").setValue(parseLong(ETt10.getText().toString()));
 
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
+
                                 Toast.makeText(PiscinasSector5.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
                                 inicializarCamposVariables();
@@ -417,7 +452,9 @@ public class PiscinasSector5 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PiscinasSector5.this, INICIO.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -441,7 +478,7 @@ public class PiscinasSector5 extends AppCompatActivity {
                         }
                         Piscinas p27= new Piscinas();
                         p27.setUid(UUID.randomUUID().toString());
-                        p27.setFecha(dateTextView.getText().toString());
+                        p27.setFecha(currentDate);
                         p27.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p27.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p27.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -457,6 +494,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         p27.setT7(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p27.setT8(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
                         p27.setT9(Integer.parseInt(Objects.requireNonNull(ETt9.getText()).toString()));
+
+                        p27.setRojo(getIntValue(ETRojo));
+                        p27.setFresco(getIntValue(ETFresco));
+                        p27.setReportado(getIntValue(ETReportado));
+                        p27.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 27").child(p27.getUid()).setValue(p27);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase9T("Piscina 27",currentDate);
@@ -472,7 +514,7 @@ public class PiscinasSector5 extends AppCompatActivity {
                         }
                         Piscinas p28= new Piscinas();
                         p28.setUid(UUID.randomUUID().toString());
-                        p28.setFecha(dateTextView.getText().toString());
+                        p28.setFecha(currentDate);
                         p28.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p28.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p28.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -485,6 +527,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         p28.setT4(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
                         p28.setT5(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p28.setT6(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+
+                        p28.setRojo(getIntValue(ETRojo));
+                        p28.setFresco(getIntValue(ETFresco));
+                        p28.setReportado(getIntValue(ETReportado));
+                        p28.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 28").child(p28.getUid()).setValue(p28);
                         verificarDatosEnFirebase6T("Piscina 28",currentDate);
                         Toast.makeText(PiscinasSector5.this, "DATOS INGRESADOS", Toast.LENGTH_SHORT).show();
@@ -499,7 +546,7 @@ public class PiscinasSector5 extends AppCompatActivity {
                         }
                         Piscinas p29= new Piscinas();
                         p29.setUid(UUID.randomUUID().toString());
-                        p29.setFecha(dateTextView.getText().toString());
+                        p29.setFecha(currentDate);
                         p29.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p29.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p29.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -514,6 +561,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         p29.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p29.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
                         p29.setT8(Integer.parseInt(Objects.requireNonNull(ETt9.getText()).toString()));
+
+                        p29.setRojo(getIntValue(ETRojo));
+                        p29.setFresco(getIntValue(ETFresco));
+                        p29.setReportado(getIntValue(ETReportado));
+                        p29.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 29").child(p29.getUid()).setValue(p29);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase8T("Piscina 29",currentDate);
@@ -528,7 +580,7 @@ public class PiscinasSector5 extends AppCompatActivity {
                         }
                         Piscinas p30= new Piscinas();
                         p30.setUid(UUID.randomUUID().toString());
-                        p30.setFecha(dateTextView.getText().toString());
+                        p30.setFecha(currentDate);
                         p30.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p30.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p30.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -542,6 +594,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         p30.setT5(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
                         p30.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p30.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+
+                        p30.setRojo(getIntValue(ETRojo));
+                        p30.setFresco(getIntValue(ETFresco));
+                        p30.setReportado(getIntValue(ETReportado));
+                        p30.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 30").child(p30.getUid()).setValue(p30);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase7T("Piscina 30",currentDate);
@@ -556,7 +613,7 @@ public class PiscinasSector5 extends AppCompatActivity {
                         }
                         Piscinas p31= new Piscinas();
                         p31.setUid(UUID.randomUUID().toString());
-                        p31.setFecha(dateTextView.getText().toString());
+                        p31.setFecha(currentDate);
                         p31.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p31.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p31.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -570,6 +627,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         p31.setT5(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
                         p31.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p31.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+
+                        p31.setRojo(getIntValue(ETRojo));
+                        p31.setFresco(getIntValue(ETFresco));
+                        p31.setReportado(getIntValue(ETReportado));
+                        p31.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 31").child(p31.getUid()).setValue(p31);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase7T("Piscina 31",currentDate);
@@ -613,7 +675,7 @@ public class PiscinasSector5 extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 piscinaSeleccionada = s.toString();
-                String fechaSeleccionada = dateTextView.getText().toString();
+                String fechaSeleccionada = currentDate;
                 if (!piscinaSeleccionada.isEmpty()) {
                 }
 
@@ -809,6 +871,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         Long t5 = snapshot.child("t5").getValue(Long.class);
                         Long t6 = snapshot.child("t6").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -822,6 +889,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         String t4S = (t4 != null) ? t4.toString() : "";
                         String t5S = (t5 != null) ? t5.toString() : "";
                         String t6S = (t6 != null) ? t6.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -837,6 +909,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         ETt6.setText(t4S);
                         ETt7.setText(t5S);
                         ETt8.setText(t6S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -890,6 +967,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                                 nodoReferencia.child("t5").setValue(parseLong(ETt7.getText().toString()));
                                 nodoReferencia.child("t6").setValue(parseLong(ETt8.getText().toString()));
 
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
+
                                 Toast.makeText(PiscinasSector5.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
                                 inicializarCamposVariables();
@@ -936,6 +1018,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         Long t3 = snapshot.child("t3").getValue(Long.class);
                         Long t4 = snapshot.child("t4").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -947,6 +1034,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         String t2S = (t2 != null) ? t2.toString() : "";
                         String t3S = (t3 != null) ? t3.toString() : "";
                         String t4S = (t4 != null) ? t4.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -960,6 +1052,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         ETt2.setText(t2S);
                         ETt3.setText(t3S);
                         ETt4.setText(t4S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -1015,6 +1112,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         Long t7 = snapshot.child("t7").getValue(Long.class);
                         Long t8 = snapshot.child("t8").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -1030,6 +1132,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         String t6S = (t6 != null) ? t6.toString() : "";
                         String t7S = (t7 != null) ? t7.toString() : "";
                         String t8S = (t8 != null) ? t8.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -1047,6 +1154,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         ETt7.setText(t6S);
                         ETt8.setText(t7S);
                         ETt9.setText(t8S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -1104,6 +1216,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         Long t9 = snapshot.child("t9").getValue(Long.class);
                         Long t10 = snapshot.child("t10").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -1121,6 +1238,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         String t8S = (t8 != null) ? t8.toString() : "";
                         String t9S = (t9 != null) ? t9.toString() : "";
                         String t10S = (t10 != null) ? t10.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -1140,6 +1262,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         ETt8.setText(t8S);
                         ETt9.setText(t9S);
                         ETt10.setText(t10S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -1194,6 +1321,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         Long t6 = snapshot.child("t6").getValue(Long.class);
                         Long t7 = snapshot.child("t7").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -1208,6 +1340,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         String t5S = (t5 != null) ? t5.toString() : "";
                         String t6S = (t6 != null) ? t6.toString() : "";
                         String t7S = (t7 != null) ? t7.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -1224,6 +1361,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         ETt6.setText(t5S);
                         ETt7.setText(t6S);
                         ETt8.setText(t7S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -1294,8 +1436,11 @@ public class PiscinasSector5 extends AppCompatActivity {
         ETt8=findViewById(R.id.etT8);
         ETt9=findViewById(R.id.etT9);
         ETt10=findViewById(R.id.etT10);
-        //ETGramos=findViewById(R.id.etgramos);
-        //ETPorcentaje=findViewById(R.id.etporcentaje);
+
+        ETRojo=findViewById(R.id.etRojo);
+        ETFresco=findViewById(R.id.etFresco);
+        ETReportado=findViewById(R.id.etReportado);
+        ETObservaciones=findViewById(R.id.etObservaciones);
 
 
         TVt1.setVisibility(View.INVISIBLE);
@@ -1367,6 +1512,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         Long t8 = snapshot.child("t8").getValue(Long.class);
                         Long t9 = snapshot.child("t9").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -1383,6 +1533,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         String t7S = (t7 != null) ? t7.toString() : "";
                         String t8S = (t8 != null) ? t8.toString() : "";
                         String t9S = (t9 != null) ? t9.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -1401,6 +1556,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         ETt7.setText(t7S);
                         ETt8.setText(t8S);
                         ETt9.setText(t9S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -1450,6 +1610,13 @@ public class PiscinasSector5 extends AppCompatActivity {
                         Long t4 = snapshot.child("t4").getValue(Long.class);
                         Long t5 = snapshot.child("t5").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -1462,6 +1629,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         String t3S = (t3 != null) ? t3.toString() : "";
                         String t4S = (t4 != null) ? t4.toString() : "";
                         String t5S = (t5 != null) ? t5.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -1476,6 +1648,11 @@ public class PiscinasSector5 extends AppCompatActivity {
                         ETt3.setText(t3S);
                         ETt6.setText(t4S);
                         ETt7.setText(t5S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -1517,8 +1694,29 @@ public class PiscinasSector5 extends AppCompatActivity {
         ETt8.setText("");
         ETt9.setText("");
         ETt10.setText("");
+        ETRojo.setText("");
+        ETFresco.setText("");
+        ETReportado.setText("");
+        ETObservaciones.setText("");
         botonActualizar.setVisibility(View.INVISIBLE);
 
+    }
+    private int getIntValue(EditText editText) {
+        String text = editText.getText().toString();
+        return text.isEmpty() ? 0 : Integer.parseInt(text);
+    }
+
+    // Método para obtener un valor de texto, o una cadena vacía si es null
+    private String getStringValue(EditText editText) {
+        String text = editText.getText().toString();
+        return text.isEmpty() ? "" : text;
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Aquí puedes agregar cualquier lógica que necesites antes de cerrar la actividad
+        // Por ejemplo, mostrar un mensaje o realizar limpieza
+        super.onBackPressed(); // Esto cerrará la actividad actual
     }
 
 

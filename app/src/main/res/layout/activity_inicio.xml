@@ -26,9 +26,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/colorsecundario"
-            android:text="Registrar"
+            android:text="SOBRANTE TOLVAS"
             android:textSize="20sp"
             app:icon="@drawable/shrimp2"
+            app:iconSize="30dp"
+            app:iconGravity="textStart"
+            style="@style/Widget.MaterialComponents.Button.Icon"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPlt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colorsecundario"
+            android:text="PLATOS"
+            android:enabled="false"
+            android:textSize="20sp"
+            app:icon="@drawable/platos"
             app:iconSize="30dp"
             app:iconGravity="textStart"
             style="@style/Widget.MaterialComponents.Button.Icon"/>

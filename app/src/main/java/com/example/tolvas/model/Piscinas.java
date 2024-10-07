@@ -19,25 +19,14 @@ public class Piscinas {
     public int t8;
     public int t9;
     public int t10;
-    public int gramosTotalP;
+    public int rojo;
+    public int fresco;
+    public int reportado;
+    public String observaciones;
 
-    public int getPorcentajeSobranteP() {
-        return porcentajeSobranteP;
-    }
 
-    public void setPorcentajeSobranteP(int porcentajeSobranteP) {
-        this.porcentajeSobranteP = porcentajeSobranteP;
-    }
 
-    public int getGramosTotalP() {
-        return gramosTotalP;
-    }
 
-    public void setGramosTotalP(int gramosTotalP) {
-        this.gramosTotalP = gramosTotalP;
-    }
-
-    public int porcentajeSobranteP;
 
     public String getUid() {
         return uid;
@@ -181,5 +170,36 @@ public class Piscinas {
 
     public void setT10(int t10) {
         this.t10 = t10;
+    }
+    public int getRojo() {
+        return rojo;
+    }
+
+    public void setRojo(int rojo) {
+        this.rojo = rojo;
+    }
+
+    public int getFresco() {
+        return fresco;
+    }
+
+    public void setFresco(int fresco) {
+        this.fresco = fresco;
+    }
+
+    public int getReportado() {
+        return reportado;
+    }
+
+    public void setReportado(int reportado) {
+        this.reportado = reportado;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
 }

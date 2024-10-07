@@ -21,6 +21,7 @@ public class INICIO extends AppCompatActivity {
         setContentView(R.layout.activity_inicio);
         MaterialButton botonActualizar = findViewById(R.id.btnUpdate);
         MaterialButton botonIngresar = findViewById(R.id.btnIng);
+        MaterialButton botonPlatos = findViewById(R.id.btnPlt);
         MaterialButton botonRevisar = findViewById(R.id.btnRev);
 
 
@@ -56,4 +57,5 @@ public class INICIO extends AppCompatActivity {
 
 
     }
+
 }

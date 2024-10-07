@@ -19,8 +19,11 @@ import com.google.firebase.database.ValueEventListener;
 
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class ReporteSector7 extends AppCompatActivity {
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -37,6 +40,8 @@ public class ReporteSector7 extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
+
+        actualizarDatosDesdeFirebase();
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         webView = findViewById(R.id.webView1);
         WebSettings webSettings = webView.getSettings();
@@ -66,6 +71,36 @@ public class ReporteSector7 extends AppCompatActivity {
         editTextDate.setOnClickListener(v -> showDatePickerDialog());
 
         loadFirebaseData();
+    }
+
+    private void actualizarDatosDesdeFirebase() {
+        // Lista de referencias a las piscinas
+        List<String> piscinas = Arrays.asList("Piscina 37", "Piscina 38A", "Piscina 38B", "Piscina 39", "Piscina 40", "Piscina 41", "Piscina 42", "Piscina 43", "Piscina 44", "Piscina 45", "Piscina 46A", "Piscina 46B");
+
+        for (String piscina : piscinas) {
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference(piscina);
+
+            // Consulta a Firebase
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // Procesa los datos obtenidos
+                    Map<String, Object> datos = (Map<String, Object>) dataSnapshot.getValue();
+                    if (datos != null) {
+                        // Actualiza la interfaz de usuario o maneja los datos
+
+                    } else {
+                        Log.w("FirebaseWarning", "No hay datos disponibles para " + piscina);
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Maneja los errores
+                    Log.e("FirebaseError", "Error al leer los datos de " + piscina, databaseError.toException());
+                }
+            });
+        }
     }
 
     private void refreshWebView() {
@@ -593,9 +628,376 @@ public class ReporteSector7 extends AppCompatActivity {
                                                                                                             }
                                                                                                         }
 
+                                                                                                        // Cerrar la segunda tabla
                                                                                                         htmlBuilder.append("</table></body></html>");
-                                                                                                        webView.loadDataWithBaseURL(null, htmlBuilder.toString(), "text/html", "UTF-8", null);
-                                                                                                        swipeRefreshLayout.setRefreshing(false);
+
+
+
+
+
+                                                                                                        htmlBuilder.append("<h1>NOVEDADES</h1>");
+                                                                                                        htmlBuilder.append("<table border='3'>");
+                                                                                                        htmlBuilder.append("<tr><th>PISCINA</th><th>ROJO</th><th>FRESCO</th><th>REPORTADO</th><th>OBSERVACIONES</th></tr>"); // Agregar "OBSERVACIONES"
+
+// Consultar Piscina 1
+
+                                                                                                        piscina37Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                            @Override
+                                                                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                    String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                    if (formattedDate.equals(fecha)) {
+                                                                                                                        Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                        Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                        Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                        // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                        rojo = (rojo != null) ? rojo : 0;
+                                                                                                                        fresco = (fresco != null) ? fresco : 0;
+                                                                                                                        reportado = (reportado != null) ? reportado : 0;
+                                                                                                                        observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                        htmlBuilder.append("<tr><td>37</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                    }
+                                                                                                                }
+
+                                                                                                                piscina38ARef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                                    @Override
+                                                                                                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                            String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                            if (formattedDate.equals(fecha)) {
+                                                                                                                                Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                                Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                                Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                                String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                                // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                                rojo = (rojo != null) ? rojo : 0;
+                                                                                                                                fresco = (fresco != null) ? fresco : 0;
+                                                                                                                                reportado = (reportado != null) ? reportado : 0;
+                                                                                                                                observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                                htmlBuilder.append("<tr><td>38A</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                            }
+                                                                                                                        }
+
+                                                                                                                        piscina38BRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                                            @Override
+                                                                                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                                    String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                                    if (formattedDate.equals(fecha)) {
+                                                                                                                                        Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                                        Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                                        Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                                        // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                                        rojo = (rojo != null) ? rojo : 0;
+                                                                                                                                        fresco = (fresco != null) ? fresco : 0;
+                                                                                                                                        reportado = (reportado != null) ? reportado : 0;
+                                                                                                                                        observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                                        htmlBuilder.append("<tr><td>38B</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                                    }
+                                                                                                                                }
+
+                                                                                                                                piscina39Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                                                    @Override
+                                                                                                                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                                            String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                                            if (formattedDate.equals(fecha)) {
+                                                                                                                                                Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                                                Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                                                Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                                                String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                                                // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                                                rojo = (rojo != null) ? rojo : 0;
+                                                                                                                                                fresco = (fresco != null) ? fresco : 0;
+                                                                                                                                                reportado = (reportado != null) ? reportado : 0;
+                                                                                                                                                observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                                                htmlBuilder.append("<tr><td>39</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                                            }
+                                                                                                                                        }
+
+                                                                                                                                        piscina40Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                                                            @Override
+                                                                                                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                                                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                                                    String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                                                    if (formattedDate.equals(fecha)) {
+                                                                                                                                                        Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                                                        Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                                                        Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                                                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                                                        // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                                                        rojo = (rojo != null) ? rojo : 0;
+                                                                                                                                                        fresco = (fresco != null) ? fresco : 0;
+                                                                                                                                                        reportado = (reportado != null) ? reportado : 0;
+                                                                                                                                                        observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                                                        htmlBuilder.append("<tr><td>40</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                                                    }
+                                                                                                                                                }
+
+                                                                                                                                                piscina41Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                                                                    @Override
+                                                                                                                                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                                                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                                                            String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                                                            if (formattedDate.equals(fecha)) {
+                                                                                                                                                                Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                                                                Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                                                                Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                                                                String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                                                                // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                                                                rojo = (rojo != null) ? rojo : 0;
+                                                                                                                                                                fresco = (fresco != null) ? fresco : 0;
+                                                                                                                                                                reportado = (reportado != null) ? reportado : 0;
+                                                                                                                                                                observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                                                                htmlBuilder.append("<tr><td>41</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                                                            }
+                                                                                                                                                        }
+
+                                                                                                                                                        piscina42Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                                                                            @Override
+                                                                                                                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                                                                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                                                                    String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                                                                    if (formattedDate.equals(fecha)) {
+                                                                                                                                                                        Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                                                                        Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                                                                        Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                                                                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                                                                        // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                                                                        rojo = (rojo != null) ? rojo : 0;
+                                                                                                                                                                        fresco = (fresco != null) ? fresco : 0;
+                                                                                                                                                                        reportado = (reportado != null) ? reportado : 0;
+                                                                                                                                                                        observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                                                                        htmlBuilder.append("<tr><td>42</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                                                                    }
+                                                                                                                                                                }
+
+                                                                                                                                                                piscina43Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                                                                                    @Override
+                                                                                                                                                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                                                                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                                                                            String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                                                                            if (formattedDate.equals(fecha)) {
+                                                                                                                                                                                Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                                                                                Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                                                                                Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                                                                                String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                                                                                // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                                                                                rojo = (rojo != null) ? rojo : 0;
+                                                                                                                                                                                fresco = (fresco != null) ? fresco : 0;
+                                                                                                                                                                                reportado = (reportado != null) ? reportado : 0;
+                                                                                                                                                                                observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                                                                                htmlBuilder.append("<tr><td>43</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+
+                                                                                                                                                                        piscina44Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                                                                                            @Override
+                                                                                                                                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                                                                                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                                                                                    String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                                                                                    if (formattedDate.equals(fecha)) {
+                                                                                                                                                                                        Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                                                                                        Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                                                                                        Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                                                                                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                                                                                        // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                                                                                        rojo = (rojo != null) ? rojo : 0;
+                                                                                                                                                                                        fresco = (fresco != null) ? fresco : 0;
+                                                                                                                                                                                        reportado = (reportado != null) ? reportado : 0;
+                                                                                                                                                                                        observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                                                                                        htmlBuilder.append("<tr><td>44</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+
+                                                                                                                                                                                piscina45Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                                                                                                    @Override
+                                                                                                                                                                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                                                                                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                                                                                            String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                                                                                            if (formattedDate.equals(fecha)) {
+                                                                                                                                                                                                Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                                                                                                Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                                                                                                Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                                                                                                String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                                                                                                // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                                                                                                rojo = (rojo != null) ? rojo : 0;
+                                                                                                                                                                                                fresco = (fresco != null) ? fresco : 0;
+                                                                                                                                                                                                reportado = (reportado != null) ? reportado : 0;
+                                                                                                                                                                                                observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                                                                                                htmlBuilder.append("<tr><td>45</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                                                                                            }
+                                                                                                                                                                                        }
+
+                                                                                                                                                                                        piscina46ARef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                                                                                                            @Override
+                                                                                                                                                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                                                                                                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                                                                                                    String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                                                                                                    if (formattedDate.equals(fecha)) {
+                                                                                                                                                                                                        Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                                                                                                        Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                                                                                                        Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                                                                                                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                                                                                                        // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                                                                                                        rojo = (rojo != null) ? rojo : 0;
+                                                                                                                                                                                                        fresco = (fresco != null) ? fresco : 0;
+                                                                                                                                                                                                        reportado = (reportado != null) ? reportado : 0;
+                                                                                                                                                                                                        observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                                                                                                        htmlBuilder.append("<tr><td>46A</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                }
+
+                                                                                                                                                                                                piscina46BRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                                                                                                                                    @Override
+                                                                                                                                                                                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                                                                                                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                                                                                                                                                                            String fecha = snapshot.child("fecha").getValue(String.class);
+                                                                                                                                                                                                            if (formattedDate.equals(fecha)) {
+                                                                                                                                                                                                                Integer rojo = snapshot.child("rojo").getValue(Integer.class);
+                                                                                                                                                                                                                Integer fresco = snapshot.child("fresco").getValue(Integer.class);
+                                                                                                                                                                                                                Integer reportado = snapshot.child("reportado").getValue(Integer.class); // Corrige el nombre "reportadp"
+                                                                                                                                                                                                                String observaciones = snapshot.child("observaciones").getValue(String.class);
+
+                                                                                                                                                                                                                // Inicializar tolvas a 0 si los valores son nulos
+                                                                                                                                                                                                                rojo = (rojo != null) ? rojo : 0;
+                                                                                                                                                                                                                fresco = (fresco != null) ? fresco : 0;
+                                                                                                                                                                                                                reportado = (reportado != null) ? reportado : 0;
+                                                                                                                                                                                                                observaciones = (observaciones != null) ? observaciones : "";
+
+                                                                                                                                                                                                                htmlBuilder.append("<tr><td>46B</td><td>").append(rojo).append("</td><td>").append(fresco).append("</td><td>").append(reportado).append("</td><td>").append(observaciones).append("</td></tr>");
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                        // Cerrar la segunda tabla
+                                                                                                                                                                                                        htmlBuilder.append("</table>");
+
+                                                                                                                                                                                                        // Cerrar el HTML
+                                                                                                                                                                                                        htmlBuilder.append("</body></html>");
+
+                                                                                                                                                                                                        // Cargar los datos en el WebView
+                                                                                                                                                                                                        webView.loadDataWithBaseURL(null, htmlBuilder.toString(), "text/html", "UTF-8", null);
+                                                                                                                                                                                                        swipeRefreshLayout.setRefreshing(false);
+                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                    @Override
+                                                                                                                                                                                                    public void onCancelled(DatabaseError databaseError) {
+                                                                                                                                                                                                        Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                                                                                                        swipeRefreshLayout.setRefreshing(false);
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                });
+                                                                                                                                                                                            }
+
+                                                                                                                                                                                            @Override
+                                                                                                                                                                                            public void onCancelled(DatabaseError databaseError) {
+                                                                                                                                                                                                Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                                                                                                swipeRefreshLayout.setRefreshing(false);
+                                                                                                                                                                                            }
+                                                                                                                                                                                        });
+                                                                                                                                                                                    }
+
+                                                                                                                                                                                    @Override
+                                                                                                                                                                                    public void onCancelled(DatabaseError databaseError) {
+                                                                                                                                                                                        Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                                                                                        swipeRefreshLayout.setRefreshing(false);
+                                                                                                                                                                                    }
+                                                                                                                                                                                });
+                                                                                                                                                                            }
+
+                                                                                                                                                                            @Override
+                                                                                                                                                                            public void onCancelled(DatabaseError databaseError) {
+                                                                                                                                                                                Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                                                                                swipeRefreshLayout.setRefreshing(false);
+                                                                                                                                                                            }
+                                                                                                                                                                        });
+                                                                                                                                                                    }
+
+                                                                                                                                                                    @Override
+                                                                                                                                                                    public void onCancelled(DatabaseError databaseError) {
+                                                                                                                                                                        Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                                                                        swipeRefreshLayout.setRefreshing(false);
+                                                                                                                                                                    }
+                                                                                                                                                                });
+                                                                                                                                                            }
+
+                                                                                                                                                            @Override
+                                                                                                                                                            public void onCancelled(DatabaseError databaseError) {
+                                                                                                                                                                Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                                                                swipeRefreshLayout.setRefreshing(false);
+                                                                                                                                                            }
+                                                                                                                                                        });
+                                                                                                                                                    }
+
+                                                                                                                                                    @Override
+                                                                                                                                                    public void onCancelled(DatabaseError databaseError) {
+                                                                                                                                                        Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                                                        swipeRefreshLayout.setRefreshing(false);
+                                                                                                                                                    }
+                                                                                                                                                });
+                                                                                                                                            }
+
+                                                                                                                                            @Override
+                                                                                                                                            public void onCancelled(DatabaseError databaseError) {
+                                                                                                                                                Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                                                swipeRefreshLayout.setRefreshing(false);
+                                                                                                                                            }
+                                                                                                                                        });
+                                                                                                                                    }
+
+                                                                                                                                    @Override
+                                                                                                                                    public void onCancelled(DatabaseError databaseError) {
+                                                                                                                                        Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                                        swipeRefreshLayout.setRefreshing(false);
+                                                                                                                                    }
+                                                                                                                                });
+                                                                                                                            }
+
+                                                                                                                            @Override
+                                                                                                                            public void onCancelled(DatabaseError databaseError) {
+                                                                                                                                Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                                swipeRefreshLayout.setRefreshing(false);
+                                                                                                                            }
+                                                                                                                        });
+                                                                                                                    }
+
+                                                                                                                    @Override
+                                                                                                                    public void onCancelled(DatabaseError databaseError) {
+                                                                                                                        Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                        swipeRefreshLayout.setRefreshing(false);
+                                                                                                                    }
+                                                                                                                });
+                                                                                                            }
+
+                                                                                                            @Override
+                                                                                                            public void onCancelled(DatabaseError databaseError) {
+                                                                                                                Log.e("FirebaseError", "Error al cargar datos", databaseError.toException());
+                                                                                                                swipeRefreshLayout.setRefreshing(false);
+                                                                                                            }
+                                                                                                        });
                                                                                                     }
 
                                                                                                     @Override
@@ -728,5 +1130,11 @@ public class ReporteSector7 extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.US);
         selectedDate = sdf.format(calendar.getTime()); // Guarda la fecha en formato de cadena
         editTextDate.setText(selectedDate);
+    }
+    @Override
+    public void onBackPressed() {
+        // Aquí puedes agregar cualquier lógica que necesites antes de cerrar la actividad
+        // Por ejemplo, mostrar un mensaje o realizar limpieza
+        super.onBackPressed(); // Esto cerrará la actividad actual
     }
 }

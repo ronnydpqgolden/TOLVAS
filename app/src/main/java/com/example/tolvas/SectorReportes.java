@@ -82,5 +82,11 @@ public class SectorReportes extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        // Aquí puedes agregar cualquier lógica que necesites antes de cerrar la actividad
+        // Por ejemplo, mostrar un mensaje o realizar limpieza
+        super.onBackPressed(); // Esto cerrará la actividad actual
+    }
 
 }

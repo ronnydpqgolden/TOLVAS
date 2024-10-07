@@ -42,7 +42,7 @@ public class PiscinasSector7 extends AppCompatActivity {
     private TextInputLayout dietaTV,sobranteTolvaTV,recargaTV,alVoleoTV,sobranteCasetaTV,piscinaTV,tiposBalanceadoTV;
     private TextInputEditText dietaET,sobranteTolvaET,sobranteCasetaET,recargaET,alVoleoET;
     private TextInputLayout TVt1,TVt2,TVt3,TVt4,TVt5,TVt6,TVt7,TVt8,TVt9,TVt10;
-    private TextInputEditText ETt1,ETt2,ETt3,ETt4,ETt5,ETt6,ETt7,ETt8,ETt9,ETt10,ETGramos, ETPorcentaje;
+    private TextInputEditText ETt1,ETt2,ETt3,ETt4,ETt5,ETt6,ETt7,ETt8,ETt9,ETt10,ETRojo, ETFresco, ETReportado, ETObservaciones;
     private String piscinaSeleccionada;
     private TextView dateTextView,TVz1,TVz2;
     MaterialButton botonGuardar,botonInicio,botonActualizar;
@@ -65,8 +65,13 @@ public class PiscinasSector7 extends AppCompatActivity {
 
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        //currentDate = "30/09/2024";
+        //dateTextView.setText("30/09/2024");
         currentDate = sdf.format(new Date());
-        dateTextView.setText(currentDate);
+        SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE", new Locale("es", "ES"));
+        String currentDay = sdf2.format(new Date());
+
+        dateTextView.setText(currentDay+", "+currentDate);
 
 
         insertarDatosPiscinasZona1();
@@ -119,7 +124,9 @@ public class PiscinasSector7 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PiscinasSector7.this, INICIO.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -143,7 +150,7 @@ public class PiscinasSector7 extends AppCompatActivity {
                         }
                         Piscinas p37= new Piscinas();
                         p37.setUid(UUID.randomUUID().toString());
-                        p37.setFecha(dateTextView.getText().toString());
+                        p37.setFecha(currentDate);
                         p37.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p37.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p37.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -156,6 +163,10 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p37.setT4(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
                         p37.setT5(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p37.setT6(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        p37.setRojo(getIntValue(ETRojo));
+                        p37.setFresco(getIntValue(ETFresco));
+                        p37.setReportado(getIntValue(ETReportado));
+                        p37.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 37").child(p37.getUid()).setValue(p37);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase6T("Piscina 37",currentDate);
@@ -171,7 +182,7 @@ public class PiscinasSector7 extends AppCompatActivity {
                         }
                         Piscinas p38A= new Piscinas();
                         p38A.setUid(UUID.randomUUID().toString());
-                        p38A.setFecha(dateTextView.getText().toString());
+                        p38A.setFecha(currentDate);
                         p38A.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p38A.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p38A.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -184,6 +195,10 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p38A.setT4(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
                         p38A.setT5(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p38A.setT6(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        p38A.setRojo(getIntValue(ETRojo));
+                        p38A.setFresco(getIntValue(ETFresco));
+                        p38A.setReportado(getIntValue(ETReportado));
+                        p38A.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 38A").child(p38A.getUid()).setValue(p38A);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase6T("Piscina 38A",currentDate);
@@ -199,7 +214,7 @@ public class PiscinasSector7 extends AppCompatActivity {
                         }
                         Piscinas p38B= new Piscinas();
                         p38B.setUid(UUID.randomUUID().toString());
-                        p38B.setFecha(dateTextView.getText().toString());
+                        p38B.setFecha(currentDate);
                         p38B.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p38B.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p38B.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -212,6 +227,10 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p38B.setT4(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
                         p38B.setT5(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p38B.setT6(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        p38B.setRojo(getIntValue(ETRojo));
+                        p38B.setFresco(getIntValue(ETFresco));
+                        p38B.setReportado(getIntValue(ETReportado));
+                        p38B.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 38B").child(p38B.getUid()).setValue(p38B);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase6T("Piscina 38B",currentDate);
@@ -226,7 +245,7 @@ public class PiscinasSector7 extends AppCompatActivity {
                         }
                         Piscinas p39= new Piscinas();
                         p39.setUid(UUID.randomUUID().toString());
-                        p39.setFecha(dateTextView.getText().toString());
+                        p39.setFecha(currentDate);
                         p39.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p39.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p39.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -239,6 +258,10 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p39.setT4(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
                         p39.setT5(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p39.setT6(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        p39.setRojo(getIntValue(ETRojo));
+                        p39.setFresco(getIntValue(ETFresco));
+                        p39.setReportado(getIntValue(ETReportado));
+                        p39.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 39").child(p39.getUid()).setValue(p39);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase6T("Piscina 39",currentDate);
@@ -253,7 +276,7 @@ public class PiscinasSector7 extends AppCompatActivity {
                         }
                         Piscinas p40= new Piscinas();
                         p40.setUid(UUID.randomUUID().toString());
-                        p40.setFecha(dateTextView.getText().toString());
+                        p40.setFecha(currentDate);
                         p40.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p40.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p40.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -268,6 +291,10 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p40.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p40.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
                         p40.setT8(Integer.parseInt(Objects.requireNonNull(ETt9.getText()).toString()));
+                        p40.setRojo(getIntValue(ETRojo));
+                        p40.setFresco(getIntValue(ETFresco));
+                        p40.setReportado(getIntValue(ETReportado));
+                        p40.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 40").child(p40.getUid()).setValue(p40);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase8T("Piscina 40",currentDate);
@@ -282,7 +309,7 @@ public class PiscinasSector7 extends AppCompatActivity {
                         }
                         Piscinas p41= new Piscinas();
                         p41.setUid(UUID.randomUUID().toString());
-                        p41.setFecha(dateTextView.getText().toString());
+                        p41.setFecha(currentDate);
                         p41.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p41.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p41.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -299,6 +326,10 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p41.setT8(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
                         p41.setT9(Integer.parseInt(Objects.requireNonNull(ETt9.getText()).toString()));
                         p41.setT10(Integer.parseInt(Objects.requireNonNull(ETt10.getText()).toString()));
+                        p41.setRojo(getIntValue(ETRojo));
+                        p41.setFresco(getIntValue(ETFresco));
+                        p41.setReportado(getIntValue(ETReportado));
+                        p41.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 41").child(p41.getUid()).setValue(p41);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase10T("Piscina 41",currentDate);
@@ -313,7 +344,7 @@ public class PiscinasSector7 extends AppCompatActivity {
                         }
                         Piscinas p42= new Piscinas();
                         p42.setUid(UUID.randomUUID().toString());
-                        p42.setFecha(dateTextView.getText().toString());
+                        p42.setFecha(currentDate);
                         p42.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p42.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p42.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -329,6 +360,10 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p42.setT7(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p42.setT8(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
                         p42.setT9(Integer.parseInt(Objects.requireNonNull(ETt9.getText()).toString()));
+                        p42.setRojo(getIntValue(ETRojo));
+                        p42.setFresco(getIntValue(ETFresco));
+                        p42.setReportado(getIntValue(ETReportado));
+                        p42.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 42").child(p42.getUid()).setValue(p42);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase9T("Piscina 42",currentDate);
@@ -344,7 +379,7 @@ public class PiscinasSector7 extends AppCompatActivity {
                         }
                         Piscinas p43 = new Piscinas();
                         p43.setUid(UUID.randomUUID().toString());
-                        p43.setFecha(dateTextView.getText().toString());
+                        p43.setFecha(currentDate);
                         p43.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p43.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p43.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -356,6 +391,10 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p43.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
                         p43.setT4(Integer.parseInt(Objects.requireNonNull(ETt4.getText()).toString()));
                         p43.setT5(Integer.parseInt(Objects.requireNonNull(ETt5.getText()).toString()));
+                        p43.setRojo(getIntValue(ETRojo));
+                        p43.setFresco(getIntValue(ETFresco));
+                        p43.setReportado(getIntValue(ETReportado));
+                        p43.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 43").child(p43.getUid()).setValue(p43);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase5T("Piscina 43",currentDate);
@@ -370,7 +409,7 @@ public class PiscinasSector7 extends AppCompatActivity {
                         }
                         Piscinas p44= new Piscinas();
                         p44.setUid(UUID.randomUUID().toString());
-                        p44.setFecha(dateTextView.getText().toString());
+                        p44.setFecha(currentDate);
                         p44.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p44.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p44.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -384,6 +423,10 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p44.setT5(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
                         p44.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p44.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        p44.setRojo(getIntValue(ETRojo));
+                        p44.setFresco(getIntValue(ETFresco));
+                        p44.setReportado(getIntValue(ETReportado));
+                        p44.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 44").child(p44.getUid()).setValue(p44);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase7T("Piscina 44",currentDate);
@@ -398,7 +441,7 @@ public class PiscinasSector7 extends AppCompatActivity {
                         }
                         Piscinas p45= new Piscinas();
                         p45.setUid(UUID.randomUUID().toString());
-                        p45.setFecha(dateTextView.getText().toString());
+                        p45.setFecha(currentDate);
                         p45.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
                         p45.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
                         p45.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
@@ -411,6 +454,10 @@ public class PiscinasSector7 extends AppCompatActivity {
                         p45.setT4(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
                         p45.setT5(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
                         p45.setT6(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        p45.setRojo(getIntValue(ETRojo));
+                        p45.setFresco(getIntValue(ETFresco));
+                        p45.setReportado(getIntValue(ETReportado));
+                        p45.setObservaciones(getStringValue(ETObservaciones));
                         databaseReference.child("Piscina 45").child(p45.getUid()).setValue(p45);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase6T("Piscina 45",currentDate);
@@ -424,23 +471,27 @@ public class PiscinasSector7 extends AppCompatActivity {
                             Toast.makeText(PiscinasSector7.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Piscinas p16= new Piscinas();
-                        p16.setUid(UUID.randomUUID().toString());
-                        p16.setFecha(dateTextView.getText().toString());
-                        p16.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
-                        p16.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
-                        p16.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
-                        p16.setAlvoleo(Integer.parseInt(Objects.requireNonNull(alVoleoET.getText()).toString()));
-                        p16.setSobrantecaseta(Integer.parseInt(Objects.requireNonNull(sobranteCasetaET.getText()).toString()));
-                        p16.setTipobalanceado(tipoBalanceadoSeleccionado);
-                        p16.setT1(Integer.parseInt(Objects.requireNonNull(ETt1.getText()).toString()));
-                        p16.setT2(Integer.parseInt(Objects.requireNonNull(ETt2.getText()).toString()));
-                        p16.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
-                        p16.setT4(Integer.parseInt(Objects.requireNonNull(ETt4.getText()).toString()));
-                        p16.setT5(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
-                        p16.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
-                        p16.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
-                        databaseReference.child("Piscina 46A").child(p16.getUid()).setValue(p16);
+                        Piscinas p46A= new Piscinas();
+                        p46A.setUid(UUID.randomUUID().toString());
+                        p46A.setFecha(currentDate);
+                        p46A.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
+                        p46A.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
+                        p46A.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
+                        p46A.setAlvoleo(Integer.parseInt(Objects.requireNonNull(alVoleoET.getText()).toString()));
+                        p46A.setSobrantecaseta(Integer.parseInt(Objects.requireNonNull(sobranteCasetaET.getText()).toString()));
+                        p46A.setTipobalanceado(tipoBalanceadoSeleccionado);
+                        p46A.setT1(Integer.parseInt(Objects.requireNonNull(ETt1.getText()).toString()));
+                        p46A.setT2(Integer.parseInt(Objects.requireNonNull(ETt2.getText()).toString()));
+                        p46A.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
+                        p46A.setT4(Integer.parseInt(Objects.requireNonNull(ETt4.getText()).toString()));
+                        p46A.setT5(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
+                        p46A.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
+                        p46A.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        p46A.setRojo(getIntValue(ETRojo));
+                        p46A.setFresco(getIntValue(ETFresco));
+                        p46A.setReportado(getIntValue(ETReportado));
+                        p46A.setObservaciones(getStringValue(ETObservaciones));
+                        databaseReference.child("Piscina 46A").child(p46A.getUid()).setValue(p46A);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase7T("Piscina 46A",currentDate);
                         Toast.makeText(PiscinasSector7.this, "DATOS INGRESADOS", Toast.LENGTH_SHORT).show();
@@ -452,23 +503,27 @@ public class PiscinasSector7 extends AppCompatActivity {
                             Toast.makeText(PiscinasSector7.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Piscinas p16= new Piscinas();
-                        p16.setUid(UUID.randomUUID().toString());
-                        p16.setFecha(dateTextView.getText().toString());
-                        p16.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
-                        p16.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
-                        p16.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
-                        p16.setAlvoleo(Integer.parseInt(Objects.requireNonNull(alVoleoET.getText()).toString()));
-                        p16.setSobrantecaseta(Integer.parseInt(Objects.requireNonNull(sobranteCasetaET.getText()).toString()));
-                        p16.setTipobalanceado(tipoBalanceadoSeleccionado);
-                        p16.setT1(Integer.parseInt(Objects.requireNonNull(ETt1.getText()).toString()));
-                        p16.setT2(Integer.parseInt(Objects.requireNonNull(ETt2.getText()).toString()));
-                        p16.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
-                        p16.setT4(Integer.parseInt(Objects.requireNonNull(ETt4.getText()).toString()));
-                        p16.setT5(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
-                        p16.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
-                        p16.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
-                        databaseReference.child("Piscina 46B").child(p16.getUid()).setValue(p16);
+                        Piscinas p46B= new Piscinas();
+                        p46B.setUid(UUID.randomUUID().toString());
+                        p46B.setFecha(currentDate);
+                        p46B.setDieta(Integer.parseInt(Objects.requireNonNull(dietaET.getText()).toString()));
+                        p46B.setSobrantetolva(Integer.parseInt(Objects.requireNonNull(sobranteTolvaET.getText()).toString()));
+                        p46B.setRecarga(Integer.parseInt(Objects.requireNonNull(recargaET.getText()).toString()));
+                        p46B.setAlvoleo(Integer.parseInt(Objects.requireNonNull(alVoleoET.getText()).toString()));
+                        p46B.setSobrantecaseta(Integer.parseInt(Objects.requireNonNull(sobranteCasetaET.getText()).toString()));
+                        p46B.setTipobalanceado(tipoBalanceadoSeleccionado);
+                        p46B.setT1(Integer.parseInt(Objects.requireNonNull(ETt1.getText()).toString()));
+                        p46B.setT2(Integer.parseInt(Objects.requireNonNull(ETt2.getText()).toString()));
+                        p46B.setT3(Integer.parseInt(Objects.requireNonNull(ETt3.getText()).toString()));
+                        p46B.setT4(Integer.parseInt(Objects.requireNonNull(ETt4.getText()).toString()));
+                        p46B.setT5(Integer.parseInt(Objects.requireNonNull(ETt6.getText()).toString()));
+                        p46B.setT6(Integer.parseInt(Objects.requireNonNull(ETt7.getText()).toString()));
+                        p46B.setT7(Integer.parseInt(Objects.requireNonNull(ETt8.getText()).toString()));
+                        p46B.setRojo(getIntValue(ETRojo));
+                        p46B.setFresco(getIntValue(ETFresco));
+                        p46B.setReportado(getIntValue(ETReportado));
+                        p46B.setObservaciones(getStringValue(ETObservaciones));
+                        databaseReference.child("Piscina 46B").child(p46B.getUid()).setValue(p46B);
                         //limparcampospiscina1();
                         verificarDatosEnFirebase7T("Piscina 46B",currentDate);
                         Toast.makeText(PiscinasSector7.this, "DATOS INGRESADOS", Toast.LENGTH_SHORT).show();
@@ -510,7 +565,7 @@ public class PiscinasSector7 extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 piscinaSeleccionada = s.toString();
-                String fechaSeleccionada = dateTextView.getText().toString();
+                String fechaSeleccionada = currentDate;
                 if (!piscinaSeleccionada.isEmpty()) {
                 }
 
@@ -887,6 +942,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         Long t4 = snapshot.child("t4").getValue(Long.class);
                         Long t5 = snapshot.child("t5").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -899,6 +959,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         String t3S = (t3 != null) ? t3.toString() : "";
                         String t4S = (t4 != null) ? t4.toString() : "";
                         String t5S = (t5 != null) ? t5.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -913,6 +978,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         ETt3.setText(t3S);
                         ETt4.setText(t4S);
                         ETt5.setText(t5S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -963,6 +1033,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                                 nodoReferencia.child("t3").setValue(parseLong(ETt3.getText().toString()));
                                 nodoReferencia.child("t4").setValue(parseLong(ETt4.getText().toString()));
                                 nodoReferencia.child("t5").setValue(parseLong(ETt5.getText().toString()));
+
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
 
                                 Toast.makeText(PiscinasSector7.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
@@ -1015,6 +1090,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         Long t7 = snapshot.child("t7").getValue(Long.class);
                         Long t8 = snapshot.child("t8").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -1030,6 +1110,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         String t6S = (t6 != null) ? t6.toString() : "";
                         String t7S = (t7 != null) ? t7.toString() : "";
                         String t8S = (t8 != null) ? t8.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -1047,6 +1132,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         ETt7.setText(t6S);
                         ETt8.setText(t7S);
                         ETt9.setText(t8S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -1102,6 +1192,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                                 nodoReferencia.child("t7").setValue(parseLong(ETt8.getText().toString()));
                                 nodoReferencia.child("t8").setValue(parseLong(ETt9.getText().toString()));
 
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
+
                                 Toast.makeText(PiscinasSector7.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
                                 inicializarCamposVariables();
@@ -1149,6 +1244,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         Long t5 = snapshot.child("t5").getValue(Long.class);
                         Long t6 = snapshot.child("t6").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -1162,6 +1262,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         String t4S = (t4 != null) ? t4.toString() : "";
                         String t5S = (t5 != null) ? t5.toString() : "";
                         String t6S = (t6 != null) ? t6.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -1177,6 +1282,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         ETt6.setText(t4S);
                         ETt7.setText(t5S);
                         ETt8.setText(t6S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -1230,6 +1340,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                                 nodoReferencia.child("t5").setValue(parseLong(ETt7.getText().toString()));
                                 nodoReferencia.child("t6").setValue(parseLong(ETt8.getText().toString()));
 
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
+
                                 Toast.makeText(PiscinasSector7.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
                                 inicializarCamposVariables();
@@ -1279,6 +1394,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         Long t6 = snapshot.child("t6").getValue(Long.class);
                         Long t7 = snapshot.child("t7").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -1293,6 +1413,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         String t5S = (t5 != null) ? t5.toString() : "";
                         String t6S = (t6 != null) ? t6.toString() : "";
                         String t7S = (t7 != null) ? t7.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -1309,6 +1434,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         ETt6.setText(t5S);
                         ETt7.setText(t6S);
                         ETt8.setText(t7S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -1363,6 +1493,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                                 nodoReferencia.child("t6").setValue(parseLong(ETt7.getText().toString()));
                                 nodoReferencia.child("t7").setValue(parseLong(ETt8.getText().toString()));
 
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
+
                                 Toast.makeText(PiscinasSector7.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
                                 inicializarCamposVariables();
@@ -1415,6 +1550,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         Long t8 = snapshot.child("t8").getValue(Long.class);
                         Long t9 = snapshot.child("t9").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -1431,6 +1571,12 @@ public class PiscinasSector7 extends AppCompatActivity {
                         String t7S = (t7 != null) ? t7.toString() : "";
                         String t8S = (t8 != null) ? t8.toString() : "";
                         String t9S = (t9 != null) ? t9.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
+
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -1449,6 +1595,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         ETt7.setText(t7S);
                         ETt8.setText(t8S);
                         ETt9.setText(t9S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -1505,6 +1656,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                                 nodoReferencia.child("t8").setValue(parseLong(ETt8.getText().toString()));
                                 nodoReferencia.child("t9").setValue(parseLong(ETt9.getText().toString()));
 
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
+
                                 Toast.makeText(PiscinasSector7.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
                                 inicializarCamposVariables();
@@ -1558,6 +1714,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         Long t9 = snapshot.child("t9").getValue(Long.class);
                         Long t10 = snapshot.child("t10").getValue(Long.class);
 
+                        Long rojo = snapshot.child("rojo").getValue(Long.class);
+                        Long fresco = snapshot.child("fresco").getValue(Long.class);
+                        Long reportado = snapshot.child("reportado").getValue(Long.class);
+                        String observaciones = snapshot.child("observaciones").getValue(String.class);
+
                         // Convertir Long a String solo si los valores no son null
                         String dietaS = (dieta != null) ? dieta.toString() : "";
                         String sobranteTolvaS = (sobranteTolva != null) ? sobranteTolva.toString() : "";
@@ -1575,6 +1736,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         String t8S = (t8 != null) ? t8.toString() : "";
                         String t9S = (t9 != null) ? t9.toString() : "";
                         String t10S = (t10 != null) ? t10.toString() : "";
+
+                        String rojoS = (rojo != null) ? rojo.toString() : "";
+                        String frescoS= (fresco != null) ? fresco.toString() : "";
+                        String reportadoS = (reportado != null) ? reportado.toString() : "";
+                        String observacionesS = (observaciones != null) ? observaciones : "";
 
                         // Actualizar los campos de la interfaz de usuario
                         dietaET.setText(dietaS);
@@ -1594,6 +1760,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                         ETt8.setText(t8S);
                         ETt9.setText(t9S);
                         ETt10.setText(t10S);
+
+                        ETRojo.setText(rojoS);
+                        ETFresco.setText(frescoS);
+                        ETReportado.setText(reportadoS);
+                        ETObservaciones.setText(observacionesS);
 
                         botonActualizar.setVisibility(View.VISIBLE);
                         botonGuardar.setEnabled(false); // Desactiva el botón de guardar si es necesario
@@ -1650,6 +1821,11 @@ public class PiscinasSector7 extends AppCompatActivity {
                                 nodoReferencia.child("t8").setValue(parseLong(ETt8.getText().toString()));
                                 nodoReferencia.child("t9").setValue(parseLong(ETt9.getText().toString()));
                                 nodoReferencia.child("t10").setValue(parseLong(ETt10.getText().toString()));
+
+                                nodoReferencia.child("rojo").setValue(parseLong(ETRojo.getText().toString()));
+                                nodoReferencia.child("fresco").setValue(parseLong(ETFresco.getText().toString()));
+                                nodoReferencia.child("reportado").setValue(parseLong(ETReportado.getText().toString()));
+                                nodoReferencia.child("observaciones").setValue(ETObservaciones.getText().toString());
 
                                 Toast.makeText(PiscinasSector7.this, "DATOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
                                 inicializarListas();
@@ -1719,9 +1895,11 @@ public class PiscinasSector7 extends AppCompatActivity {
         ETt9=findViewById(R.id.etT9);
         ETt10=findViewById(R.id.etT10);
 
-        //ETGramos=findViewById(R.id.etgramos);
-        //ETPorcentaje=findViewById(R.id.etporcentaje);
 
+        ETRojo=findViewById(R.id.etRojo);
+        ETFresco=findViewById(R.id.etFresco);
+        ETReportado=findViewById(R.id.etReportado);
+        ETObservaciones=findViewById(R.id.etObservaciones);
 
         TVt1.setVisibility(View.INVISIBLE);
         TVt2.setVisibility(View.INVISIBLE);
@@ -1766,8 +1944,28 @@ public class PiscinasSector7 extends AppCompatActivity {
         ETt8.setText("");
         ETt9.setText("");
         ETt10.setText("");
+        ETRojo.setText("");
+        ETFresco.setText("");
+        ETReportado.setText("");
+        ETObservaciones.setText("");
         botonActualizar.setVisibility(View.INVISIBLE);
 
+    }
+    private int getIntValue(EditText editText) {
+        String text = editText.getText().toString();
+        return text.isEmpty() ? 0 : Integer.parseInt(text);
+    }
+
+    // Método para obtener un valor de texto, o una cadena vacía si es null
+    private String getStringValue(EditText editText) {
+        String text = editText.getText().toString();
+        return text.isEmpty() ? "" : text;
+    }
+    @Override
+    public void onBackPressed() {
+        // Aquí puedes agregar cualquier lógica que necesites antes de cerrar la actividad
+        // Por ejemplo, mostrar un mensaje o realizar limpieza
+        super.onBackPressed(); // Esto cerrará la actividad actual
     }
 
 

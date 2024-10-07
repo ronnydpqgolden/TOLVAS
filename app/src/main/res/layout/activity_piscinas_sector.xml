@@ -6,6 +6,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
     tools:context=".PiscinasSector1">
 
 <LinearLayout
@@ -27,7 +31,6 @@
         app:boxCornerRadiusTopStart="5sp"
         app:boxStrokeWidth="0sp"
         app:boxStrokeWidthFocused="0sp"
-        android:padding="10dp"
 
     >
 
@@ -53,7 +56,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/grid1"
-        android:padding="20dp"
         android:columnCount="2"
         android:rowCount="4"
         android:orientation="horizontal"
@@ -181,7 +183,6 @@
         android:id="@+id/grid2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
         android:columnCount="2"
         android:rowCount="6"
         android:orientation="horizontal"
@@ -422,36 +423,39 @@
 
 
     </GridLayout>
-    <!-- Este es un comentario que no afectará el código
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/grid3"
-        android:padding="20dp"
-        android:columnCount="2"
-        android:rowCount="2"
-        android:layout_gravity="center_horizontal">
-
+        android:columnCount="3"
+        android:rowCount="3"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        >
         <TextView
-            android:id="@+id/tvplatos"
-            android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PLATOS"
-        android:layout_row="0"
-        android:layout_columnSpan="2"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:gravity="center"/>
+            android:id="@+id/tvNovedades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NOVEDADES"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="3"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvGramosPlatos"
+            android:id="@+id/tvRojo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Gramos Total"
+            android:hint="ROJO"
             android:layout_row="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_marginEnd="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/cmrn"
             style="@style/CustomTextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -459,38 +463,79 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:textColor="#1b6ca8"
-                android:id="@+id/etgramos"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:id="@+id/etRojo"/>
 
+        </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvPorcentajeSobrante"
+            android:id="@+id/tvFresco"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Porcentaje Sobrante"
-            style="@style/CustomTextInputLayout"
+            android:hint="FRESCO"
             android:layout_row="1"
             android:layout_column="1"
-            app:endIconMode="custom"
-            app:endIconDrawable="@drawable/porcent"
             android:layout_columnWeight="1"
-            android:layout_marginStart="5dp">
+            android:layout_marginEnd="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/cmrn"
+            style="@style/CustomTextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:id="@+id/etporcentaje"/>
+                android:textColor="#1b6ca8"
+                android:id="@+id/etFresco"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvReportado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="REPORTADO"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="5dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/cmrn"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="#1b6ca8"
+                android:id="@+id/etReportado"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvObservaciones"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="OBSERVACIONES"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="3"
+            android:layout_marginEnd="5dp"
+            style="@style/CustomTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:textColor="#1b6ca8"
+                android:id="@+id/etObservaciones"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
     </GridLayout>
 
--->
 
     <GridLayout
         android:id="@+id/grid4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
         android:columnCount="2"
         android:rowCount="1"
         android:orientation="horizontal"
